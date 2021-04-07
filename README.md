@@ -4,12 +4,12 @@
 
 **Story: User requests to see their task list**
 
-Narrative # 1 
+**Narrative # 1** 
 
 Upon opening the app
 I'd like to see the tasks I have created in a list format 
 
-Acceptance Criteria:
+**Acceptance Criteria:**
 
 Given the user starts the app
 And the user has previously made tasks
