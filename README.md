@@ -15,7 +15,7 @@ I'd like to see the tasks I have created in a list format
 - And the user has previously made tasks
 - When the user requests to see their task list 
 - Then the app should present all tasks created by the user
-
+-------------------------------------------------------------
 - Given user starts the app 
 - And the user does not have previously made tasks
 - When the user request to see their task list 
