@@ -2,7 +2,7 @@
 
 ## Task List Feature
 
-** Story: User requests to see their task list **
+**Story: User requests to see their task list**
 
 Narrative # 1 
 
