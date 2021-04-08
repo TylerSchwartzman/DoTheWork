@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320A0505261E8E460090CF33 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320A0504261E8E460090CF33 /* FlowTests.swift */; };
+		320A0509261E91650090CF33 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320A0508261E91650090CF33 /* Flow.swift */; };
 		32382D3C261D490400460769 /* DoTheWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32382D32261D490400460769 /* DoTheWork.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +23,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320A0504261E8E460090CF33 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
+		320A0508261E91650090CF33 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		32382D32261D490400460769 /* DoTheWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DoTheWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32382D36261D490400460769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32382D3B261D490400460769 /* DoTheWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoTheWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				32382D36261D490400460769 /* Info.plist */,
+				320A0508261E91650090CF33 /* Flow.swift */,
 			);
 			path = DoTheWork;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				32382D42261D490400460769 /* Info.plist */,
+				320A0504261E8E460090CF33 /* FlowTests.swift */,
 			);
 			path = DoTheWorkTests;
 			sourceTree = "<group>";
@@ -140,9 +146,11 @@
 				TargetAttributes = {
 					32382D31261D490400460769 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					32382D3A261D490400460769 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -187,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320A0509261E91650090CF33 /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320A0505261E8E460090CF33 /* FlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +342,7 @@
 		32382D47261D490400460769 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -349,6 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ty.DoTheWork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -356,6 +368,7 @@
 		32382D48261D490400460769 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -380,6 +393,8 @@
 		32382D4A261D490400460769 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9YBP68LYN2;
@@ -391,6 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ty.DoTheWorkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -398,6 +414,8 @@
 		32382D4B261D490400460769 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9YBP68LYN2;
