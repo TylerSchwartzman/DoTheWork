@@ -11,48 +11,37 @@ import XCTest
 
 class FlowTest: XCTestCase {
     
+    let router = RouterSpy()
+    
     func test_start_withNoTasks_doesNotRouteToTaskList() {
-        let router = RouterSpy()
-        let sut = Flow(router: router, taskList: [])
-
-        sut.start()
+        makeSUT(taskList: []).start()
 
         XCTAssertTrue(router.routedTaskList.isEmpty)
     }
     
     func test_start_withOneTask_routesToCorrectTaskList() {
-        let router = RouterSpy()
         let taskList = ["Task 1"]
-        let sut = Flow(router: router, taskList: taskList)
-        
-        sut.start()
-        
+        makeSUT(taskList: taskList).start()
+                
         XCTAssertEqual(router.routedTaskList, taskList)
     }
     
     func test_start_withOneTask_routesToCorrectTaskList_2() {
-        let router = RouterSpy()
         let taskList = ["Task 2"]
-        let sut = Flow(router: router, taskList: taskList)
-        
-        sut.start()
+        makeSUT(taskList: taskList).start()
         
         XCTAssertEqual(router.routedTaskList, taskList)
     }
     
     func test_start_withTwoTasks_routesToCorrectTaskList() {
-        let router = RouterSpy()
         let taskList = ["Task 1", "Task 2"]
-        let sut = Flow(router: router, taskList: taskList)
-        
-        sut.start()
+        makeSUT(taskList: taskList).start()
         
         XCTAssertEqual(router.routedTaskList, taskList)
     }
     
     func test_startTwice_withTwoTasks_routesToCorrectTaskList() {
-        let router = RouterSpy()
-        let sut = Flow(router: router, taskList: ["Task 1", "Task 2"])
+        let sut = makeSUT(taskList: ["Task 1", "Task 2"])
         
         sut.start()
         sut.start()
@@ -60,7 +49,11 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2", "Task 1", "Task 2"])
     }
     
+    // MARK:- Helpers
     
+    func makeSUT(taskList: [String]) -> Flow {
+        return Flow(router: router, taskList: taskList)
+    }
     
     class RouterSpy: Router {
         var routedTaskList: [String] = []
