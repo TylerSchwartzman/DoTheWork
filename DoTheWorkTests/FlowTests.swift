@@ -22,29 +22,32 @@ class FlowTest: XCTestCase {
     
     func test_start_withOneTask_routesToCorrectTaskList() {
         let router = RouterSpy()
-        let sut = Flow(router: router, taskList: ["Task 1"])
+        let taskList = ["Task 1"]
+        let sut = Flow(router: router, taskList: taskList)
         
         sut.start()
         
-        XCTAssertEqual(router.routedTaskList, ["Task 1"])
+        XCTAssertEqual(router.routedTaskList, taskList)
     }
     
     func test_start_withOneTask_routesToCorrectTaskList_2() {
         let router = RouterSpy()
-        let sut = Flow(router: router, taskList: ["Task 2"])
+        let taskList = ["Task 2"]
+        let sut = Flow(router: router, taskList: taskList)
         
         sut.start()
         
-        XCTAssertEqual(router.routedTaskList, ["Task 2"])
+        XCTAssertEqual(router.routedTaskList, taskList)
     }
     
     func test_start_withTwoTasks_routesToCorrectTaskList() {
         let router = RouterSpy()
-        let sut = Flow(router: router, taskList: ["Task 1", "Task 2"])
+        let taskList = ["Task 1", "Task 2"]
+        let sut = Flow(router: router, taskList: taskList)
         
         sut.start()
         
-        XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2"])
+        XCTAssertEqual(router.routedTaskList, taskList)
     }
     
     func test_startTwice_withTwoTasks_routesToCorrectTaskList() {
