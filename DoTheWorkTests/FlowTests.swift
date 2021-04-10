@@ -49,17 +49,35 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2", "Task 1", "Task 2"])
     }
     
+    func test_start_withNoTasks_routesToNoTasksMessage() {
+        makeSUT(taskList: []).start()
+        
+        XCTAssertNotNil(router.routedNoTasksMessage)
+    }
+    
+    func test_start_withNoTasks_routesToCorrectNoTasksMessage() {
+        let message = "There are no tasks to be completed."
+        makeSUT(taskList: [], noTasksMessage: message).start()
+        
+        XCTAssertEqual(router.routedNoTasksMessage, message)
+    }
+    
     // MARK:- Helpers
     
-    func makeSUT(taskList: [String]) -> Flow {
-        return Flow(router: router, taskList: taskList)
+    func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> Flow {
+        return Flow(router: router, taskList: taskList, noTasksMessage: noTasksMessage ?? "")
     }
     
     class RouterSpy: Router {
         var routedTaskList: [String] = []
+        var routedNoTasksMessage: String? = nil
         
         func routeTo(taskList: [String]) {
             routedTaskList.append(contentsOf: taskList)
+        }
+        
+        func routeTo(noTasksMessage: String) {
+            routedNoTasksMessage = noTasksMessage
         }
     }
     
