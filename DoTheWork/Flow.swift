@@ -10,6 +10,7 @@ import Foundation
 protocol Router {
     func routeTo(taskList: [String])
     func routeTo(noTasksMessage: String)
+    func routeTo(task: String)
 }
 
 class Flow {
@@ -30,4 +31,9 @@ class Flow {
             router.routeTo(taskList: taskList)
         }
     }
+    
+    func routeToTask(_ task: String) {
+        router.routeTo(task: task)
+    }
+    
 }
