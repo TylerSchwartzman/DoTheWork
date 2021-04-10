@@ -24,10 +24,10 @@ class Flow {
     }
     
     func start() {
-        if !taskList.isEmpty {
-            router.routeTo(taskList: taskList)
-        } else {
+        if taskList.isEmpty {
             router.routeTo(noTasksMessage: noTasksMessage)
+        } else {
+            router.routeTo(taskList: taskList)
         }
     }
 }
