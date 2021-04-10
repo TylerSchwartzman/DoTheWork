@@ -47,7 +47,7 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedTaskList, taskList)
     }
     
-    func test_startTwice_withTwoTasks_routesToCorrectTaskList() {
+    func test_startTwice_withTwoTasks_routesToCorrectTaskListTwice() {
         let sut = makeSUT(taskList: ["Task 1", "Task 2"])
         
         sut.start()
