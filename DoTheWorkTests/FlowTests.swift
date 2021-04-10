@@ -76,8 +76,22 @@ class FlowTest: XCTestCase {
     func test_routeToTask_routesToCorrectTask() {
         makeSUT(taskList: ["Task 1", "Task 2"]).routeToTask("Task 1")
         
+        XCTAssertEqual(router.routedTasks, ["Task 1"])
+    }
+    
+    func test_routeToTask_routesToCorrectTask_2() {
+        makeSUT(taskList: ["Task 1", "Task 2"]).routeToTask("Task 2")
         
-        XCTAssertEqual(router.routedTask, "Task 1")
+        XCTAssertEqual(router.routedTasks, ["Task 2"])
+    }
+    
+    func test_routeToTaskTwice_routesToCorrectTaskTwice() {
+        let sut = makeSUT(taskList: ["Task 1", "Task 2"])
+
+        sut.routeToTask("Task 1")
+        sut.routeToTask("Task 1")
+
+        XCTAssertEqual(router.routedTasks, ["Task 1", "Task 1"])
     }
     
     // MARK:- Helpers
@@ -89,7 +103,7 @@ class FlowTest: XCTestCase {
     class RouterSpy: Router {
         var routedTaskList: [String] = []
         var routedNoTasksMessage: String? = nil
-        var routedTask: String? = nil
+        var routedTasks: [String] = []
         
         func routeTo(taskList: [String]) {
             routedTaskList.append(contentsOf: taskList)
@@ -100,7 +114,7 @@ class FlowTest: XCTestCase {
         }
         
         func routeTo(task: String) {
-            routedTask = task
+            routedTasks.append(task)
         }
 
     }
