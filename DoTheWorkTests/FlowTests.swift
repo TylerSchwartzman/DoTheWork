@@ -13,6 +13,13 @@ class FlowTest: XCTestCase {
     
     let router = RouterSpy()
     
+    func test_start_withNoTasks_routesToCorrectNoTasksMessage() {
+        let message = "There are no tasks to be completed."
+        makeSUT(taskList: [], noTasksMessage: message).start()
+        
+        XCTAssertEqual(router.routedNoTasksMessage, message)
+    }
+    
     func test_start_withNoTasks_doesNotRouteToTaskList() {
         makeSUT(taskList: []).start()
 
@@ -53,13 +60,6 @@ class FlowTest: XCTestCase {
         makeSUT(taskList: []).start()
         
         XCTAssertNotNil(router.routedNoTasksMessage)
-    }
-    
-    func test_start_withNoTasks_routesToCorrectNoTasksMessage() {
-        let message = "There are no tasks to be completed."
-        makeSUT(taskList: [], noTasksMessage: message).start()
-        
-        XCTAssertEqual(router.routedNoTasksMessage, message)
     }
     
     // MARK:- Helpers
