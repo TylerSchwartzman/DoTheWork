@@ -37,31 +37,27 @@ class FlowTest: XCTestCase {
     }
     
     func test_start_withOneTask_doesNotRouteToNoTasksMessage() {
-        let taskList = ["Task 1"]
-        makeSUT(taskList: taskList).start()
+        makeSUT(taskList: ["Task 1"]).start()
 
         XCTAssertNil(router.routedNoTasksMessage)
     }
     
     func test_start_withOneTask_routesToCorrectTaskList() {
-        let taskList = ["Task 1"]
-        makeSUT(taskList: taskList).start()
+        makeSUT(taskList: ["Task 1"]).start()
                 
-        XCTAssertEqual(router.routedTaskList, taskList)
+        XCTAssertEqual(router.routedTaskList, ["Task 1"])
     }
     
     func test_start_withOneTask_routesToCorrectTaskList_2() {
-        let taskList = ["Task 2"]
-        makeSUT(taskList: taskList).start()
+        makeSUT(taskList: ["Task 2"]).start()
         
-        XCTAssertEqual(router.routedTaskList, taskList)
+        XCTAssertEqual(router.routedTaskList, ["Task 2"])
     }
     
     func test_start_withTwoTasks_routesToCorrectTaskList() {
-        let taskList = ["Task 1", "Task 2"]
-        makeSUT(taskList: taskList).start()
+        makeSUT(taskList: ["Task 1", "Task 2"]).start()
         
-        XCTAssertEqual(router.routedTaskList, taskList)
+        XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2"])
     }
     
     func test_startTwice_withTwoTasks_routesToCorrectTaskListTwice() {
