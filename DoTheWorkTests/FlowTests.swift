@@ -55,12 +55,7 @@ class FlowTest: XCTestCase {
 
         XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2", "Task 1", "Task 2"])
     }
-    
-    func test_start_withNoTasks_routesToNoTasksMessage() {
-        makeSUT(taskList: []).start()
-        
-        XCTAssertNotNil(router.routedNoTasksMessage)
-    }
+
     
     // MARK:- Helpers
     
