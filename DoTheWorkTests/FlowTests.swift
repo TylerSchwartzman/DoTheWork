@@ -26,6 +26,16 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedNoTasksMessage, message)
     }
     
+    func test_startTwice_withNoTasks_routesToCorrectNoTasksMessage() {
+        let message = "There are no tasks to be completed."
+        let sut = makeSUT(taskList: [], noTasksMessage: message)
+        
+        sut.start()
+        sut.start()
+
+        XCTAssertEqual(router.routedNoTasksMessage, message)
+    }
+    
     func test_start_withOneTask_routesToCorrectTaskList() {
         let taskList = ["Task 1"]
         makeSUT(taskList: taskList).start()
