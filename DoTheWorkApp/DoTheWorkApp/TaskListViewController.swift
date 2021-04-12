@@ -34,6 +34,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         headerLabel.text = listHeader
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        tableView.frame = UIScreen.main.bounds
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
     }
