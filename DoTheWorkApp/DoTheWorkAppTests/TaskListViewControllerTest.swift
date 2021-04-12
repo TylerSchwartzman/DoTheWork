@@ -28,8 +28,8 @@ class TaskListViewControllerTest: XCTestCase {
     
     func test_taskSelected_notifiesDelegate() {
         var receivedTask = ""
-        let sut = makeSUT(taskList: ["Task 1"]) { string in
-            receivedTask = string
+        let sut = makeSUT(taskList: ["Task 1"]) { selectedTask in
+            receivedTask = selectedTask
         }
         
         let indexPath = IndexPath(row: 0, section: 0)
