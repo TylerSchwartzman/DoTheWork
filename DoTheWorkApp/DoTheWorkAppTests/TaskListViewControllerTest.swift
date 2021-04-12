@@ -15,7 +15,7 @@ class TaskListViewControllerTest: XCTestCase {
         XCTAssertEqual(makeSUT(header: "Header").headerLabel.text, "Header")
     }
     
-    func test_viewDidLoad_withOneTask_rendersOneTask() {
+    func test_viewDidLoad_rendersTasks() {
         XCTAssertEqual(makeSUT(taskList: []).tableView.numberOfRows(inSection: 0), 0)
         XCTAssertEqual(makeSUT(taskList: ["Task 1"]).tableView.numberOfRows(inSection: 0), 1)
         XCTAssertEqual(makeSUT(taskList: ["Task 1", "Task 2"]).tableView.numberOfRows(inSection: 0), 2)
@@ -32,14 +32,12 @@ class TaskListViewControllerTest: XCTestCase {
             receivedTask = selectedTask
         }
         
-        let indexPath = IndexPath(row: 0, section: 0)
-        sut.tableView.delegate?.tableView?(sut.tableView, didSelectRowAt: indexPath)
+        sut.tableView.select(row: 0)
         
         XCTAssertEqual(receivedTask, "Task 1")
     }
     
     // MARK:- Helpers
-    
     private func makeSUT(header: String = "",
                          taskList: [String] = [],
                          selection:  @escaping (String) -> Void = { _ in }) -> TaskListViewController {
@@ -57,5 +55,9 @@ private extension UITableView {
     
     func title(at row: Int) -> String? {
         return cell(at: row)?.textLabel?.text
+    }
+    
+    func select(row: Int) {
+        delegate?.tableView?(self, didSelectRowAt: IndexPath(row: row, section: 0))
     }
 }
