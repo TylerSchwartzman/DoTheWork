@@ -26,12 +26,24 @@ class TaskListViewControllerTest: XCTestCase {
         XCTAssertEqual(makeSUT(taskList: ["Task 1", "Task 2"]).tableView.title(at: 1), "Task 2")
     }
     
-    
+    func test_taskSelected_notifiesDelegate() {
+        var receivedTask = ""
+        let sut = makeSUT(taskList: ["Task 1"]) { string in
+            receivedTask = string
+        }
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        sut.tableView.delegate?.tableView?(sut.tableView, didSelectRowAt: indexPath)
+        
+        XCTAssertEqual(receivedTask, "Task 1")
+    }
     
     // MARK:- Helpers
     
-    private func makeSUT(header: String = "", taskList: [String] = []) -> TaskListViewController {
-        let sut = TaskListViewController(header: header, taskList: taskList)
+    private func makeSUT(header: String = "",
+                         taskList: [String] = [],
+                         selection:  @escaping (String) -> Void = { _ in }) -> TaskListViewController {
+        let sut = TaskListViewController(header: header, taskList: taskList, selection: selection)
         _ = sut.view
         return sut
     }

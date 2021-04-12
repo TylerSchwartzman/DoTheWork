@@ -8,20 +8,24 @@
 import Foundation
 import UIKit
 
-class TaskListViewController: UIViewController, UITableViewDataSource {
+class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let headerLabel = UILabel()
     let tableView = UITableView()
     
     private var listHeader = ""
     private var taskList = [String]()
+    private var selection: ((String) -> Void)? = nil
     private let reuseIdentifier = "Cell"
     
-    convenience init(header: String, taskList: [String]) {
+    convenience init(header: String, taskList: [String], selection: @escaping (String) -> Void) {
         self.init()
         self.listHeader = header
         self.taskList = taskList
+        self.selection = selection
+        
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func viewDidLoad() {
@@ -38,6 +42,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource {
         let cell = dequeueCell(in: tableView)
         cell.textLabel?.text = taskList[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selection?(taskList[indexPath.row])
     }
     
     private func dequeueCell(in tableView: UITableView) -> UITableViewCell {
