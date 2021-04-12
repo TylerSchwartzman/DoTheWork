@@ -35,9 +35,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        
         cell.textLabel?.text = taskList[indexPath.row]
-        
         return cell
     }
 }
