@@ -13,8 +13,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource {
     let headerLabel = UILabel()
     let tableView = UITableView()
     
-    private var listHeader: String = ""
-    private var taskList: [String] = []
+    private var listHeader = ""
+    private var taskList = [String]()
+    private let reuseIdentifier = "Cell"
     
     convenience init(header: String, taskList: [String]) {
         self.init()
@@ -34,8 +35,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = dequeueCell(in: tableView)
         cell.textLabel?.text = taskList[indexPath.row]
         return cell
     }
+    
+    private func dequeueCell(in tableView: UITableView) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) {
+            return cell
+        }
+        return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+    }
+    
 }
