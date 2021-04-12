@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */; };
+		322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB82623CA130026FB92 /* TaskListViewController.swift */; };
 		32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBD26224A1F001DA780 /* AppDelegate.swift */; };
 		32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBF26224A1F001DA780 /* SceneDelegate.swift */; };
 		32797FC726224A23001DA780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC626224A23001DA780 /* Assets.xcassets */; };
 		32797FCA26224A23001DA780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC826224A23001DA780 /* LaunchScreen.storyboard */; };
-		32797FD526224A23001DA780 /* DoTheWorkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FD426224A23001DA780 /* DoTheWorkAppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,16 +23,11 @@
 			remoteGlobalIDString = 32797FB926224A1F001DA780;
 			remoteInfo = DoTheWorkApp;
 		};
-		32797FDC26224A23001DA780 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 32797FB226224A1F001DA780 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 32797FB926224A1F001DA780;
-			remoteInfo = DoTheWorkApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTest.swift; sourceTree = "<group>"; };
+		322E0EB82623CA130026FB92 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32797FBA26224A1F001DA780 /* DoTheWorkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoTheWorkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32797FBD26224A1F001DA780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32797FBF26224A1F001DA780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +35,7 @@
 		32797FC926224A23001DA780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32797FCB26224A23001DA780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32797FD026224A23001DA780 /* DoTheWorkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoTheWorkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32797FD426224A23001DA780 /* DoTheWorkAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoTheWorkAppTests.swift; sourceTree = "<group>"; };
 		32797FD626224A23001DA780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32797FDB26224A23001DA780 /* DoTheWorkAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoTheWorkAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,13 +47,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		32797FCD26224A23001DA780 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32797FD826224A23001DA780 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,7 +70,6 @@
 			children = (
 				32797FBA26224A1F001DA780 /* DoTheWorkApp.app */,
 				32797FD026224A23001DA780 /* DoTheWorkAppTests.xctest */,
-				32797FDB26224A23001DA780 /* DoTheWorkAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +79,7 @@
 			children = (
 				32797FBD26224A1F001DA780 /* AppDelegate.swift */,
 				32797FBF26224A1F001DA780 /* SceneDelegate.swift */,
+				322E0EB82623CA130026FB92 /* TaskListViewController.swift */,
 				32797FC626224A23001DA780 /* Assets.xcassets */,
 				32797FC826224A23001DA780 /* LaunchScreen.storyboard */,
 				32797FCB26224A23001DA780 /* Info.plist */,
@@ -103,8 +90,8 @@
 		32797FD326224A23001DA780 /* DoTheWorkAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				32797FD426224A23001DA780 /* DoTheWorkAppTests.swift */,
 				32797FD626224A23001DA780 /* Info.plist */,
+				322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */,
 			);
 			path = DoTheWorkAppTests;
 			sourceTree = "<group>";
@@ -147,24 +134,6 @@
 			productReference = 32797FD026224A23001DA780 /* DoTheWorkAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		32797FDA26224A23001DA780 /* DoTheWorkAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 32797FEA26224A23001DA780 /* Build configuration list for PBXNativeTarget "DoTheWorkAppUITests" */;
-			buildPhases = (
-				32797FD726224A23001DA780 /* Sources */,
-				32797FD826224A23001DA780 /* Frameworks */,
-				32797FD926224A23001DA780 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				32797FDD26224A23001DA780 /* PBXTargetDependency */,
-			);
-			name = DoTheWorkAppUITests;
-			productName = DoTheWorkAppUITests;
-			productReference = 32797FDB26224A23001DA780 /* DoTheWorkAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -179,10 +148,7 @@
 					};
 					32797FCF26224A23001DA780 = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 32797FB926224A1F001DA780;
-					};
-					32797FDA26224A23001DA780 = {
-						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = 32797FB926224A1F001DA780;
 					};
 				};
@@ -202,7 +168,6 @@
 			targets = (
 				32797FB926224A1F001DA780 /* DoTheWorkApp */,
 				32797FCF26224A23001DA780 /* DoTheWorkAppTests */,
-				32797FDA26224A23001DA780 /* DoTheWorkAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +189,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32797FD926224A23001DA780 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -240,6 +198,7 @@
 			files = (
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,
+				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,14 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32797FD526224A23001DA780 /* DoTheWorkAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32797FD726224A23001DA780 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,11 +217,6 @@
 			isa = PBXTargetDependency;
 			target = 32797FB926224A1F001DA780 /* DoTheWorkApp */;
 			targetProxy = 32797FD126224A23001DA780 /* PBXContainerItemProxy */;
-		};
-		32797FDD26224A23001DA780 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 32797FB926224A1F001DA780 /* DoTheWorkApp */;
-			targetProxy = 32797FDC26224A23001DA780 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -444,6 +391,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YBP68LYN2;
 				INFOPLIST_FILE = DoTheWorkAppTests/Info.plist;
@@ -455,6 +403,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ty.DoTheWorkAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoTheWorkApp.app/DoTheWorkApp";
@@ -466,6 +415,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YBP68LYN2;
 				INFOPLIST_FILE = DoTheWorkAppTests/Info.plist;
@@ -480,46 +430,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoTheWorkApp.app/DoTheWorkApp";
-			};
-			name = Release;
-		};
-		32797FEB26224A23001DA780 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9YBP68LYN2;
-				INFOPLIST_FILE = DoTheWorkAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ty.DoTheWorkAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DoTheWorkApp;
-			};
-			name = Debug;
-		};
-		32797FEC26224A23001DA780 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9YBP68LYN2;
-				INFOPLIST_FILE = DoTheWorkAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ty.DoTheWorkAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DoTheWorkApp;
 			};
 			name = Release;
 		};
@@ -549,15 +459,6 @@
 			buildConfigurations = (
 				32797FE826224A23001DA780 /* Debug */,
 				32797FE926224A23001DA780 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32797FEA26224A23001DA780 /* Build configuration list for PBXNativeTarget "DoTheWorkAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32797FEB26224A23001DA780 /* Debug */,
-				32797FEC26224A23001DA780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
