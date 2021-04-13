@@ -18,10 +18,20 @@ class NoTasksViewController: UIViewController {
         self.message = message
     }
     
+    override func loadView() {
+        view = messageLabel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
         messageLabel.text = message
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        view.center = messageLabel.center
     }
     
 }
