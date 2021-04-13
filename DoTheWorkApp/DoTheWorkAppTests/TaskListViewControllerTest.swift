@@ -46,15 +46,15 @@ class TaskListViewControllerTest: XCTestCase {
     
     // MARK:- Helpers
     private func makeSUT(header: String = "",
-                         taskList: [TaskListTask] = [],
+                         taskList: [TaskListItem] = [],
                          selection:  @escaping (String) -> Void = { _ in }) -> TaskListViewController {
         let sut = TaskListViewController(header: header, taskList: taskList, selection: selection)
         _ = sut.view
         return sut
     }
     
-    private func uniqueTaskListItem(title: String = "", notifcation: Date = .init()) -> TaskListTask {
-        let taskList = TaskListTask(title: title, notification: notifcation)
+    private func uniqueTaskListItem(title: String = "", notifcation: Date = .init()) -> TaskListItem {
+        let taskList = TaskListItem(title: title, notification: notifcation)
         return taskList
     }
     

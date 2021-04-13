@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct TaskListTask {
+struct TaskListItem {
     let title: String
     let notification: Date
 }
@@ -18,11 +18,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     let tableView = UITableView()
     
     private var listHeader = ""
-    private var taskList = [TaskListTask]()
+    private var taskList = [TaskListItem]()
     private var selection: ((String) -> Void)? = nil
     private let reuseIdentifier = "Cell"
     
-    convenience init(header: String, taskList: [TaskListTask], selection: @escaping (String) -> Void) {
+    convenience init(header: String, taskList: [TaskListItem], selection: @escaping (String) -> Void) {
         self.init()
         self.listHeader = header
         self.taskList = taskList

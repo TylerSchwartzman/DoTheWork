@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = TaskListViewController(
             header: "Tasks Review",
             taskList: [
-                TaskListTask(title: "Task 1", notification: Date()),
-                TaskListTask(title: "Task 2", notification: Date())]
+                TaskListItem(title: "Task 1", notification: Date()),
+                TaskListItem(title: "Task 2", notification: Date())]
         ) { print($0) }
 //        window?.rootViewController = NoTasksViewController(message: "There are no tasks to review.")
         window?.makeKeyAndVisible()
