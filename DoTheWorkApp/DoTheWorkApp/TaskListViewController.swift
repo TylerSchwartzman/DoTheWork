@@ -27,6 +27,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    override func loadView() {
+        view = tableView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,4 +64,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerLabel
+    }
 }
