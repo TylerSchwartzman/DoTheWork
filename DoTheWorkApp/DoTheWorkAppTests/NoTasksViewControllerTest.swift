@@ -11,7 +11,6 @@ import XCTest
 
 class NoTasksViewControllerTest: XCTestCase {
     
-    
     func test_viewDidLoad_rendersNoTasksMessage() {
         let sut = NoTasksViewController(message: "Header Text")
         
@@ -20,7 +19,4 @@ class NoTasksViewControllerTest: XCTestCase {
         XCTAssertEqual(sut.messageLabel.text, "Header Text")
     }
 
-    
-    
-    
 }
