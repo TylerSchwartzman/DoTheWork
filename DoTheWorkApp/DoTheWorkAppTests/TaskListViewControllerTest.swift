@@ -18,7 +18,7 @@ class TaskListViewControllerTest: XCTestCase {
     func test_viewDidLoad_rendersTasks() {
         let taskList1 = [uniqueTaskListItem(title: "Task 1")]
         let taskList2 = [uniqueTaskListItem(title: "Task 1"), uniqueTaskListItem(title: "Task 2")]
-
+        
         XCTAssertEqual(makeSUT(taskList: []).tableView.numberOfRows(inSection: 0), 0)
         XCTAssertEqual(makeSUT(taskList: taskList1).tableView.numberOfRows(inSection: 0), 1)
         XCTAssertEqual(makeSUT(taskList: taskList2).tableView.numberOfRows(inSection: 0), 2)
@@ -34,6 +34,7 @@ class TaskListViewControllerTest: XCTestCase {
     
     func test_taskSelected_notifiesDelegate() {
         let taskList = [uniqueTaskListItem(title: "Task 1")]
+        
         var receivedTask = ""
         let sut = makeSUT(taskList: taskList) { selectedTask in
             receivedTask = selectedTask
@@ -54,7 +55,15 @@ class TaskListViewControllerTest: XCTestCase {
     }
     
     private func uniqueTaskListItem(title: String = "", notifcation: Date = .init()) -> TaskListItem {
-        let taskList = TaskListItem(title: title, notification: notifcation)
+        let taskListItem = TaskListItem(title: title, notification: notifcation)
+        return taskListItem
+    }
+    
+    private func uniqueTaskList() -> [TaskListItem] {
+        let taskList = [
+            uniqueTaskListItem(title: "Task 1"),
+            uniqueTaskListItem(title: "Task 2")
+        ]
         return taskList
     }
     
