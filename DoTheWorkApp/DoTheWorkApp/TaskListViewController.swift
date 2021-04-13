@@ -7,17 +7,22 @@
 
 import UIKit
 
+struct TaskListTask {
+    let title: String
+    let notification: Date
+}
+
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let headerLabel = UILabel()
     let tableView = UITableView()
     
     private var listHeader = ""
-    private var taskList = [String]()
+    private var taskList = [TaskListTask]()
     private var selection: ((String) -> Void)? = nil
     private let reuseIdentifier = "Cell"
     
-    convenience init(header: String, taskList: [String], selection: @escaping (String) -> Void) {
+    convenience init(header: String, taskList: [TaskListTask], selection: @escaping (String) -> Void) {
         self.init()
         self.listHeader = header
         self.taskList = taskList
@@ -48,12 +53,12 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueCell(in: tableView)
-        cell.textLabel?.text = taskList[indexPath.row]
+        cell.textLabel?.text = taskList[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selection?(taskList[indexPath.row])
+        selection?(taskList[indexPath.row].title)
     }
     
     private func dequeueCell(in tableView: UITableView) -> UITableViewCell {

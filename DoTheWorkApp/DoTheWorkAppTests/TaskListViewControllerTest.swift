@@ -16,19 +16,26 @@ class TaskListViewControllerTest: XCTestCase {
     }
     
     func test_viewDidLoad_rendersTasks() {
+        let taskList1 = [uniqueTaskListItem(title: "Task 1")]
+        let taskList2 = [uniqueTaskListItem(title: "Task 1"), uniqueTaskListItem(title: "Task 2")]
+
         XCTAssertEqual(makeSUT(taskList: []).tableView.numberOfRows(inSection: 0), 0)
-        XCTAssertEqual(makeSUT(taskList: ["Task 1"]).tableView.numberOfRows(inSection: 0), 1)
-        XCTAssertEqual(makeSUT(taskList: ["Task 1", "Task 2"]).tableView.numberOfRows(inSection: 0), 2)
+        XCTAssertEqual(makeSUT(taskList: taskList1).tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(makeSUT(taskList: taskList2).tableView.numberOfRows(inSection: 0), 2)
     }
     
     func test_viewDidLoad_rendersTaskText() {
-        XCTAssertEqual(makeSUT(taskList: ["Task 1"]).tableView.title(at: 0), "Task 1")
-        XCTAssertEqual(makeSUT(taskList: ["Task 1", "Task 2"]).tableView.title(at: 1), "Task 2")
+        let taskList1 = [uniqueTaskListItem(title: "Task 1")]
+        let taskList2 = [uniqueTaskListItem(title: "Task 1"), uniqueTaskListItem(title: "Task 2")]
+
+        XCTAssertEqual(makeSUT(taskList: taskList1).tableView.title(at: 0), "Task 1")
+        XCTAssertEqual(makeSUT(taskList: taskList2).tableView.title(at: 1), "Task 2")
     }
     
     func test_taskSelected_notifiesDelegate() {
+        let taskList = [uniqueTaskListItem(title: "Task 1")]
         var receivedTask = ""
-        let sut = makeSUT(taskList: ["Task 1"]) { selectedTask in
+        let sut = makeSUT(taskList: taskList) { selectedTask in
             receivedTask = selectedTask
         }
         
@@ -39,11 +46,16 @@ class TaskListViewControllerTest: XCTestCase {
     
     // MARK:- Helpers
     private func makeSUT(header: String = "",
-                         taskList: [String] = [],
+                         taskList: [TaskListTask] = [],
                          selection:  @escaping (String) -> Void = { _ in }) -> TaskListViewController {
         let sut = TaskListViewController(header: header, taskList: taskList, selection: selection)
         _ = sut.view
         return sut
+    }
+    
+    private func uniqueTaskListItem(title: String = "", notifcation: Date = .init()) -> TaskListTask {
+        let taskList = TaskListTask(title: title, notification: notifcation)
+        return taskList
     }
     
 }
