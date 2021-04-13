@@ -30,6 +30,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(TaskListItemCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     override func loadView() {
@@ -52,8 +53,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueCell(in: tableView)
-        cell.textLabel?.text = taskList[indexPath.row].title
+        let task = taskList[indexPath.row]
+        let cell = dequeueCell(in: tableView, for: task)
         return cell
     }
     
@@ -61,11 +62,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         selection?(taskList[indexPath.row].title)
     }
     
-    private func dequeueCell(in tableView: UITableView) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) {
-            return cell
-        }
-        return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+    private func dequeueCell(in tableView: UITableView, for task: TaskListItem) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! TaskListItemCell
+        cell.titleLabel.text = task.title
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
