@@ -14,7 +14,7 @@ struct TaskListItem {
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let headerLabel = UILabel()
+    let headerLabel = UILabel.makeLabel(for: .largeTitle)
     let tableView = UITableView()
     
     private var listHeader = ""
@@ -41,6 +41,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         headerLabel.text = listHeader
         tableView.register(TaskListItemCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.separatorStyle = .none
     }
     
     override func viewWillLayoutSubviews() {
@@ -70,6 +71,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return headerLabel
+        return HeaderView(with: headerLabel)
     }
 }

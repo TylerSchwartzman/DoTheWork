@@ -17,6 +17,7 @@ class TaskListItemCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         notificationLabel.textColor = .secondaryLabel
         contentView.addSubview(vStack)
         setConstraints()
@@ -29,6 +30,7 @@ class TaskListItemCell: UITableViewCell {
     private func makeVStackView() -> UIStackView {
         let vStack = UIStackView(arrangedSubviews: [titleLabel, notificationLabel])
         vStack.axis = .vertical
+        vStack.spacing = 2
         vStack.translatesAutoresizingMaskIntoConstraints = false
         return vStack
     }
@@ -57,15 +59,4 @@ class TaskListItemCell: UITableViewCell {
         ])
     }
     
-}
-
-private extension UILabel {
-    static func makeLabel(for textStyle: UIFont.TextStyle) -> UILabel {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: textStyle)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        label.numberOfLines = 0
-        return label
-    }
 }

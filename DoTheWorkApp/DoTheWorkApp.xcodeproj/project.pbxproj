@@ -10,6 +10,8 @@
 		320850C7262617CE00CB5F3D /* NoTasksViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850C6262617CE00CB5F3D /* NoTasksViewControllerTest.swift */; };
 		320850CD2626188600CB5F3D /* NoTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850CC2626188600CB5F3D /* NoTasksViewController.swift */; };
 		320850D12626459300CB5F3D /* TaskListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850D02626459300CB5F3D /* TaskListItemCell.swift */; };
+		320850D82626788700CB5F3D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850D72626788700CB5F3D /* HeaderView.swift */; };
+		320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850DC26267A8400CB5F3D /* UILabel+Extensions.swift */; };
 		322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */; };
 		322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB82623CA130026FB92 /* TaskListViewController.swift */; };
 		32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBD26224A1F001DA780 /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 		320850C6262617CE00CB5F3D /* NoTasksViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksViewControllerTest.swift; sourceTree = "<group>"; };
 		320850CC2626188600CB5F3D /* NoTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksViewController.swift; sourceTree = "<group>"; };
 		320850D02626459300CB5F3D /* TaskListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemCell.swift; sourceTree = "<group>"; };
+		320850D72626788700CB5F3D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		320850DC26267A8400CB5F3D /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTest.swift; sourceTree = "<group>"; };
 		322E0EB82623CA130026FB92 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32797FBA26224A1F001DA780 /* DoTheWorkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoTheWorkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +66,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320850D42626786A00CB5F3D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				322E0EB82623CA130026FB92 /* TaskListViewController.swift */,
+				320850CC2626188600CB5F3D /* NoTasksViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		320850DB26267A6D00CB5F3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				320850DC26267A8400CB5F3D /* UILabel+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		320850E026267AC500CB5F3D /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				320850D02626459300CB5F3D /* TaskListItemCell.swift */,
+				320850D72626788700CB5F3D /* HeaderView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		32797FB126224A1F001DA780 = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +115,9 @@
 			children = (
 				32797FBD26224A1F001DA780 /* AppDelegate.swift */,
 				32797FBF26224A1F001DA780 /* SceneDelegate.swift */,
-				322E0EB82623CA130026FB92 /* TaskListViewController.swift */,
-				320850D02626459300CB5F3D /* TaskListItemCell.swift */,
-				320850CC2626188600CB5F3D /* NoTasksViewController.swift */,
+				320850DB26267A6D00CB5F3D /* Extensions */,
+				320850E026267AC500CB5F3D /* Custom Views */,
+				320850D42626786A00CB5F3D /* View Controllers */,
 				32797FC626224A23001DA780 /* Assets.xcassets */,
 				32797FC826224A23001DA780 /* LaunchScreen.storyboard */,
 				32797FCB26224A23001DA780 /* Info.plist */,
@@ -206,10 +236,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				320850CD2626188600CB5F3D /* NoTasksViewController.swift in Sources */,
+				320850D82626788700CB5F3D /* HeaderView.swift in Sources */,
 				320850D12626459300CB5F3D /* TaskListItemCell.swift in Sources */,
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,
 				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
+				320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
