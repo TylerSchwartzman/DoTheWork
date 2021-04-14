@@ -20,6 +20,7 @@ I'd like to see the tasks I have created in a list format
 - And the user does not have previously made tasks
 - When the user request to see their task list 
 - Then the app should present the user with a message stating there are no tasks - prompting them to create a new one 
+-------------------------------------------------------------
 
 **Story: User requests to see a specific task in their task list**
 
