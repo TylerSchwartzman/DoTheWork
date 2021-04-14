@@ -46,7 +46,7 @@ class CardView: UIView {
         }
         set {
             layer.shadowOffset = newValue
-            layer.shadowColor = UIColor.label.cgColor
+            layer.shadowColor = UIColor.darkGray.cgColor
             layer.masksToBounds = false
         }
     }

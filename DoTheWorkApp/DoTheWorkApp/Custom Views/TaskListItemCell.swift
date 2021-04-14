@@ -44,7 +44,7 @@ class TaskListItemCell: UITableViewCell {
     }
     
     private func configureCardView() {
-        cardView.cornerRadius = 20
+        cardView.cornerRadius = 14
         cardView.shadowRadius = 6
         cardView.shadowOpacity = 0.2
         cardView.shadowOffset =  CGSize(width: 0.0, height: 0.0)
@@ -63,9 +63,9 @@ class TaskListItemCell: UITableViewCell {
     
     private func setVStackConstraints() {
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: cardView.topAnchor, constant: defaultPadding),
-            vStack.leadingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.leadingAnchor),
-            vStack.trailingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.trailingAnchor),
+            vStack.topAnchor.constraint(equalTo: cardView.layoutMarginsGuide.topAnchor, constant: defaultPadding),
+            vStack.leadingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.leadingAnchor, constant: defaultPadding),
+            vStack.trailingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.trailingAnchor, constant: -defaultPadding),
             vStack.bottomAnchor.constraint(equalTo: cardView.layoutMarginsGuide.bottomAnchor, constant: -defaultPadding),
         ])
     }
