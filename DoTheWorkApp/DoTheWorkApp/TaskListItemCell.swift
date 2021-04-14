@@ -9,7 +9,12 @@ import UIKit
 
 class TaskListItemCell: UITableViewCell {
     
-    let titleLabel = UILabel()
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
+    
     let notificationLabel = UILabel()
     private lazy var vStack = makeVStackView()
     

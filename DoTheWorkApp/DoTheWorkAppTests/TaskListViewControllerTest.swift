@@ -34,7 +34,7 @@ class TaskListViewControllerTest: XCTestCase {
         assertEqual(cell, "Task 1", date)
     }
     
-    func test_viewDidLoad_withTwoTask_rendersCorrectText() {
+    func test_viewDidLoad_withTwoTasks_rendersCorrectText() {
         let date = Date()
         let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1", notifcation: date), makeTaskListItem(title: "Task 2", notifcation: date)])
         

@@ -30,7 +30,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(TaskListItemCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     override func loadView() {
@@ -41,6 +40,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         headerLabel.text = listHeader
+        tableView.register(TaskListItemCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
     
     override func viewWillLayoutSubviews() {
