@@ -25,11 +25,14 @@ class TaskListViewControllerTest: XCTestCase {
     }
     
     func test_viewDidLoad_withTasks_ConfiguresCell() {
-        let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1")])
+        let date = Date()
+        let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1", notifcation: date)])
         
         let cell = sut.tableView.cell(at: 0) as? TaskListItemCell
         
         XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.titleLabel.text, "Task 1")
+        XCTAssertEqual(cell?.notificationLabel.text, String(describing: date))
     }
     
     

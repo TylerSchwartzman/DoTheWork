@@ -65,6 +65,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     private func dequeueCell(in tableView: UITableView, for task: TaskListItem) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! TaskListItemCell
         cell.titleLabel.text = task.title
+        cell.notificationLabel.text = String(describing: task.notification)
         return cell
     }
     
