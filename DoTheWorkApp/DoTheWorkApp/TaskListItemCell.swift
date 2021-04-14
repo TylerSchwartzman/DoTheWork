@@ -9,28 +9,15 @@ import UIKit
 
 class TaskListItemCell: UITableViewCell {
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        label.numberOfLines = 0
-        return label
-    }()
+    let titleLabel = UILabel.makeLabel(for: .headline)
     
-    let notificationLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        label.numberOfLines = 0
-        return label
-    }()
+    let notificationLabel = UILabel.makeLabel(for: .subheadline)
     
     private lazy var vStack = makeVStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        notificationLabel.textColor = .secondaryLabel
         contentView.addSubview(vStack)
         setConstraints()
     }
@@ -72,3 +59,13 @@ class TaskListItemCell: UITableViewCell {
     
 }
 
+private extension UILabel {
+    static func makeLabel(for textStyle: UIFont.TextStyle) -> UILabel {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: textStyle)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
+        label.numberOfLines = 0
+        return label
+    }
+}
