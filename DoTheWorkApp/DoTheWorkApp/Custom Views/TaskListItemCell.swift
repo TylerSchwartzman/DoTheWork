@@ -20,6 +20,7 @@ class TaskListItemCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
+        contentView.backgroundColor = .secondarySystemBackground
         notificationLabel.textColor = .secondaryLabel
         addSubviews()
         configureCardView()
@@ -37,8 +38,8 @@ class TaskListItemCell: UITableViewCell {
     
     private func setConstraints() {
         setCardViewConstraints()
-        setLabelWidthConstraints()
         setVStackConstraints()
+        setLabelWidthConstraints()
     }
     
     private func configureCardView() {
@@ -46,11 +47,11 @@ class TaskListItemCell: UITableViewCell {
         cardView.shadowRadius = 6
         cardView.shadowOpacity = 0.2
         cardView.shadowOffset =  CGSize(width: 0.0, height: 0.0)
+        cardView.backgroundColor = .systemBackground
     }
     
     private func setCardViewConstraints() {
         cardView.translatesAutoresizingMaskIntoConstraints = false
-        cardView.backgroundColor = .systemRed
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: defaultPadding),
             cardView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
@@ -59,22 +60,22 @@ class TaskListItemCell: UITableViewCell {
         ])
     }
     
-    private func setLabelWidthConstraints() {
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.trailingAnchor),
-            
-            notificationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            notificationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
-        ])
-    }
-    
     private func setVStackConstraints() {
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: cardView.topAnchor, constant: defaultPadding),
-            vStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
-            vStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
-            vStack.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -defaultPadding)
+            vStack.leadingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.leadingAnchor),
+            vStack.trailingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.trailingAnchor),
+            vStack.bottomAnchor.constraint(equalTo: cardView.layoutMarginsGuide.bottomAnchor, constant: -defaultPadding),
+        ])
+    }
+    
+    private func setLabelWidthConstraints() {
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: vStack.layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: vStack.layoutMarginsGuide.trailingAnchor),
+            
+            notificationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            notificationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }
     

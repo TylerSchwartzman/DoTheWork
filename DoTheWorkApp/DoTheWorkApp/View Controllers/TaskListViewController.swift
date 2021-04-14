@@ -15,7 +15,7 @@ struct TaskListItem {
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let headerLabel = UILabel.makeLabel(for: .largeTitle)
-    let tableView = UITableView()
+    let tableView = UITableView(frame: .zero, style: .grouped)
     
     private var listHeader = ""
     private var taskList = [TaskListItem]()
