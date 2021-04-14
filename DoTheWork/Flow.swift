@@ -8,17 +8,20 @@
 import Foundation
 
 protocol Router {
-    func routeTo(taskList: [String])
-    func routeTo(noTasksMessage: String)
-    func routeTo(task: String)
+    associatedtype Task
+    associatedtype NoTaskMessage
+    
+    func routeTo(taskList: [Task])
+    func routeTo(noTasksMessage: NoTaskMessage)
+    func routeTo(task: Task)
 }
 
-class Flow {
-    let router: Router
-    let taskList: [String]
-    let noTasksMessage: String
+class Flow <Task, NoTaskMessage, R: Router> where R.Task == Task, R.NoTaskMessage == NoTaskMessage {
+    let router: R
+    let taskList: [Task]
+    let noTasksMessage: NoTaskMessage
     
-    init(router: Router, taskList: [String], noTasksMessage: String) {
+    init(router: R, taskList: [Task], noTasksMessage: NoTaskMessage) {
         self.router = router
         self.taskList = taskList
         self.noTasksMessage = noTasksMessage
@@ -32,7 +35,7 @@ class Flow {
         }
     }
     
-    func routeToTask(_ task: String) {
+    func routeToTask(_ task: Task) {
         router.routeTo(task: task)
     }
     

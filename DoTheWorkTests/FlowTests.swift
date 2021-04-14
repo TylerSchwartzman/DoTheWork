@@ -92,7 +92,7 @@ class FlowTest: XCTestCase {
     
     // MARK:- Helpers
     
-    func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> Flow {
+    func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> Flow<String, String, RouterSpy> {
         return Flow(router: router, taskList: taskList, noTasksMessage: noTasksMessage ?? "")
     }
     
