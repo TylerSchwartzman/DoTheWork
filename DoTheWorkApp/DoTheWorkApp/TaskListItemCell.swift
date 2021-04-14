@@ -11,11 +11,20 @@ class TaskListItemCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
         return label
     }()
     
-    let notificationLabel = UILabel()
+    let notificationLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.adjustsFontForContentSizeCategory = true
+        label.numberOfLines = 0
+        return label
+    }()
+    
     private lazy var vStack = makeVStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
