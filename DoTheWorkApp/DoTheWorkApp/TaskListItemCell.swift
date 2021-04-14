@@ -12,6 +12,7 @@ class TaskListItemCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
         return label
@@ -20,6 +21,7 @@ class TaskListItemCell: UITableViewCell {
     let notificationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
         return label
@@ -45,6 +47,21 @@ class TaskListItemCell: UITableViewCell {
     }
     
     private func setConstraints() {
+        setLabelWidthConstraints()
+        setVStackConstraints()
+    }
+    
+    private func setLabelWidthConstraints() {
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            
+            notificationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            notificationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+        ])
+    }
+    
+    private func setVStackConstraints() {
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             vStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
