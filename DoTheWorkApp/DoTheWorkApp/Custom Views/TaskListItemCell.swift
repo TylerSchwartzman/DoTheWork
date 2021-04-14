@@ -19,6 +19,7 @@ class TaskListItemCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         selectionStyle = .none
         contentView.backgroundColor = .secondarySystemBackground
         notificationLabel.textColor = .secondaryLabel
@@ -71,15 +72,15 @@ class TaskListItemCell: UITableViewCell {
     
     private func setLabelWidthConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: vStack.layoutMarginsGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: vStack.layoutMarginsGuide.trailingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: vStack.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: vStack.trailingAnchor),
             
             notificationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             notificationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }
     
-    // MARK: Helper
+    // MARK: Helpers
     private func makeVStackView() -> UIStackView {
         let vStack = UIStackView(arrangedSubviews: [titleLabel, notificationLabel])
         vStack.axis = .vertical
