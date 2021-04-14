@@ -12,6 +12,7 @@
 		320850D12626459300CB5F3D /* TaskListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850D02626459300CB5F3D /* TaskListItemCell.swift */; };
 		320850D82626788700CB5F3D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850D72626788700CB5F3D /* HeaderView.swift */; };
 		320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850DC26267A8400CB5F3D /* UILabel+Extensions.swift */; };
+		320850E626267C8E00CB5F3D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850E526267C8E00CB5F3D /* CardView.swift */; };
 		322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */; };
 		322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB82623CA130026FB92 /* TaskListViewController.swift */; };
 		32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBD26224A1F001DA780 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		320850D02626459300CB5F3D /* TaskListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemCell.swift; sourceTree = "<group>"; };
 		320850D72626788700CB5F3D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		320850DC26267A8400CB5F3D /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		320850E526267C8E00CB5F3D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTest.swift; sourceTree = "<group>"; };
 		322E0EB82623CA130026FB92 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		32797FBA26224A1F001DA780 /* DoTheWorkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoTheWorkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 			children = (
 				320850D02626459300CB5F3D /* TaskListItemCell.swift */,
 				320850D72626788700CB5F3D /* HeaderView.swift */,
+				320850E526267C8E00CB5F3D /* CardView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,
 				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
+				320850E626267C8E00CB5F3D /* CardView.swift in Sources */,
 				320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

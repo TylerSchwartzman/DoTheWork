@@ -9,8 +9,10 @@ import UIKit
 
 class TaskListItemCell: UITableViewCell {
     
-    let titleLabel = UILabel.makeLabel(for: .headline)
+    private var defaultPadding: CGFloat = 8
     
+    let cardView = CardView()
+    let titleLabel = UILabel.makeLabel(for: .headline)
     let notificationLabel = UILabel.makeLabel(for: .subheadline)
     
     private lazy var vStack = makeVStackView()
@@ -19,7 +21,8 @@ class TaskListItemCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         notificationLabel.textColor = .secondaryLabel
-        contentView.addSubview(vStack)
+        addSubviews()
+        configureCardView()
         setConstraints()
     }
     
@@ -27,23 +30,39 @@ class TaskListItemCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func makeVStackView() -> UIStackView {
-        let vStack = UIStackView(arrangedSubviews: [titleLabel, notificationLabel])
-        vStack.axis = .vertical
-        vStack.spacing = 2
-        vStack.translatesAutoresizingMaskIntoConstraints = false
-        return vStack
+    private func addSubviews() {
+        contentView.addSubview(cardView)
+        cardView.addSubview(vStack)
     }
     
     private func setConstraints() {
+        setCardViewConstraints()
         setLabelWidthConstraints()
         setVStackConstraints()
     }
     
+    private func configureCardView() {
+        cardView.cornerRadius = 20
+        cardView.shadowRadius = 6
+        cardView.shadowOpacity = 0.2
+        cardView.shadowOffset =  CGSize(width: 0.0, height: 0.0)
+    }
+    
+    private func setCardViewConstraints() {
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        cardView.backgroundColor = .systemRed
+        NSLayoutConstraint.activate([
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: defaultPadding),
+            cardView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -defaultPadding),
+        ])
+    }
+    
     private func setLabelWidthConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: cardView.layoutMarginsGuide.trailingAnchor),
             
             notificationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             notificationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
@@ -52,11 +71,20 @@ class TaskListItemCell: UITableViewCell {
     
     private func setVStackConstraints() {
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: contentView.topAnchor),
-            vStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            vStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            vStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            vStack.topAnchor.constraint(equalTo: cardView.topAnchor, constant: defaultPadding),
+            vStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            vStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            vStack.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -defaultPadding)
         ])
+    }
+    
+    // MARK: Helper
+    private func makeVStackView() -> UIStackView {
+        let vStack = UIStackView(arrangedSubviews: [titleLabel, notificationLabel])
+        vStack.axis = .vertical
+        vStack.spacing = 2
+        vStack.translatesAutoresizingMaskIntoConstraints = false
+        return vStack
     }
     
 }
