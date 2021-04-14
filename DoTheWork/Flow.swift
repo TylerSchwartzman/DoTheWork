@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Router {
+public protocol Router {
     associatedtype Task
     associatedtype NoTaskMessage
     
@@ -37,6 +37,10 @@ class Flow <Task, NoTaskMessage, R: Router> where R.Task == Task, R.NoTaskMessag
     
     func routeToTask(_ task: Task) {
         router.routeTo(task: task)
+    }
+    
+    func routeToTaskList(_ taskList: [Task]) {
+        router.routeTo(taskList: taskList)
     }
     
 }

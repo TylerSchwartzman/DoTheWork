@@ -90,6 +90,12 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedTasks, ["Task 1", "Task 1"])
     }
     
+    func test_routeToTaskList_routesToCorrectTaskList() {
+        makeSUT(taskList: ["Task 1", "Task 2"]).routeToTaskList(["Task 1", "Task 2"])
+
+        XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2"])
+    }
+    
     // MARK:- Helpers
     
     func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> Flow<String, String, RouterSpy> {
