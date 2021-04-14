@@ -27,6 +27,7 @@ class NoTasksViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         messageLabel.text = message
+        messageLabel.textAlignment = .center
     }
     
     override func viewWillLayoutSubviews() {

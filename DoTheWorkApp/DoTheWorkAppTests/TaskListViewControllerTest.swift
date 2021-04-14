@@ -24,17 +24,28 @@ class TaskListViewControllerTest: XCTestCase {
         XCTAssertEqual(makeSUT(taskList: taskList2).tableView.numberOfRows(inSection: 0), 2)
     }
     
-    func test_viewDidLoad_withTasks_ConfiguresCell() {
+    func test_viewDidLoad_withTask_ConfiguresCell() {
         let date = Date()
         let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1", notifcation: date)])
         
         let cell = sut.tableView.cell(at: 0) as? TaskListItemCell
         
         XCTAssertNotNil(cell)
-        XCTAssertEqual(cell?.titleLabel.text, "Task 1")
-        XCTAssertEqual(cell?.notificationLabel.text, String(describing: date))
+        assertEqual(cell, "Task 1", date)
     }
     
+    func test_viewDidLoad_withTwoTask_rendersCorrectText() {
+        let date = Date()
+        let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1", notifcation: date), makeTaskListItem(title: "Task 2", notifcation: date)])
+        
+        let firstCell = sut.tableView.cell(at: 0) as? TaskListItemCell
+        let secondCell = sut.tableView.cell(at: 1) as? TaskListItemCell
+
+        XCTAssertNotNil(firstCell)
+        XCTAssertNotNil(secondCell)
+        assertEqual(firstCell, "Task 1", date)
+        assertEqual(secondCell, "Task 2", date)
+    }
     
     func test_taskSelected_notifiesDelegate() {
         let taskList = [makeTaskListItem(title: "Task 1")]
@@ -61,6 +72,11 @@ class TaskListViewControllerTest: XCTestCase {
     private func makeTaskListItem(title: String = "", notifcation: Date = .init()) -> TaskListItem {
         let taskListItem = TaskListItem(title: title, notification: notifcation)
         return taskListItem
+    }
+    
+    private func assertEqual(_ cell: TaskListItemCell?, _ text: String, _ date: Date) {
+        XCTAssertEqual(cell?.titleLabel.text, text)
+        XCTAssertEqual(cell?.notificationLabel.text, String(describing: date))
     }
     
 }
