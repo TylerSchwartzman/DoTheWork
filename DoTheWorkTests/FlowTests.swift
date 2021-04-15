@@ -118,7 +118,6 @@ class FlowTest: XCTestCase {
         func routeTo(task: String) {
             routedTasks.append(task)
         }
-
     }
     
 }

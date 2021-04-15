@@ -17,13 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = TaskListViewController(
-            header: "Tasks Review",
-            taskList: [
-                TaskListItem(title: "Task 1 Task 1 Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1", notification: Date()),
-                TaskListItem(title: "Task 2", notification: Date())]
-        ) { print($0) }
-//        window?.rootViewController = NoTasksViewController(message: "There are no tasks to review.")
+//        window?.rootViewController = TaskListViewController(
+//            header: "Tasks Review",
+//            taskList: [
+//                TaskListItem(title: "Task 1 Task 1 Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1", notification: Date()),
+//                TaskListItem(title: "Task 2", notification: Date())]
+//        ) { print($0) }
+        window?.rootViewController = NoTasksViewController(message: "There are no tasks to review.")
         window?.makeKeyAndVisible()
     }
 

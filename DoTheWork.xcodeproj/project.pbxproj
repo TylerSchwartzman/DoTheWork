@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		320A0505261E8E460090CF33 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320A0504261E8E460090CF33 /* FlowTests.swift */; };
 		320A0509261E91650090CF33 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320A0508261E91650090CF33 /* Flow.swift */; };
+		322C13B82627EAEF006E3760 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C13B72627EAEF006E3760 /* Router.swift */; };
 		32382D3C261D490400460769 /* DoTheWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32382D32261D490400460769 /* DoTheWork.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		320A0504261E8E460090CF33 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
 		320A0508261E91650090CF33 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		322C13B72627EAEF006E3760 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		32382D32261D490400460769 /* DoTheWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DoTheWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32382D36261D490400460769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32382D3B261D490400460769 /* DoTheWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoTheWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 			children = (
 				32382D36261D490400460769 /* Info.plist */,
 				320A0508261E91650090CF33 /* Flow.swift */,
+				322C13B72627EAEF006E3760 /* Router.swift */,
 			);
 			path = DoTheWork;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322C13B82627EAEF006E3760 /* Router.swift in Sources */,
 				320A0509261E91650090CF33 /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
