@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Flow <Task, NoTaskMessage, R: Router> where R.Task == Task, R.NoTaskMessage == NoTaskMessage {
+class MainFlow <Task, NoTaskMessage, R: Router> where R.Task == Task, R.NoTaskMessage == NoTaskMessage {
     let router: R
     let taskList: [Task]
     let noTasksMessage: NoTaskMessage
