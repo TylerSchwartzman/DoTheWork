@@ -32,7 +32,6 @@ class FlowTest: XCTestCase {
         
         sut.start()
         sut.start()
-
         XCTAssertEqual(router.routedNoTasksMessage, message)
     }
     
@@ -98,8 +97,8 @@ class FlowTest: XCTestCase {
     
     // MARK:- Helpers
     
-    func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> Flow<String, String, RouterSpy> {
-        return Flow(router: router, taskList: taskList, noTasksMessage: noTasksMessage ?? "")
+    func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> MainFlow<String, String, RouterSpy> {
+        return MainFlow(router: router, taskList: taskList, noTasksMessage: noTasksMessage ?? "")
     }
     
 }
