@@ -11,6 +11,8 @@ import DoTheWork
 protocol ViewControllerFactory {
     func noTaskViewController(for noTaskMessage: String) -> UIViewController
     func taskListViewController(for taskList: [String]) -> UIViewController
+    func taskViewController(for task: String) -> UIViewController
+
 }
 
 class NavigationControllerRouter: Router {
@@ -33,6 +35,7 @@ class NavigationControllerRouter: Router {
     }
     
     func routeTo(task: String) {
-        
+        let viewController = factory.taskViewController(for: task)
+        navigationController.pushViewController(viewController, animated: false)
     }
 }

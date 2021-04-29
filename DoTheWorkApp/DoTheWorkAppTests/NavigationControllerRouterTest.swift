@@ -22,6 +22,7 @@ class NavigationControllerRouterTest: XCTestCase {
         
         sut.routeTo(noTasksMessage: "No Task Message")
         
+        XCTAssertEqual(navigationController.viewControllers.count, 1)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
     }
     
@@ -44,7 +45,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
     }
     
-    func test_routeTaskList_presentsTaskListViewController() {
+    func test_routeToTaskList_presentsTaskListViewController() {
         let navigationController = UINavigationController()
         let factory = ViewControllerFactoryStub()
         let viewController = UIViewController()
@@ -57,16 +58,70 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
     }
     
+    func test_routeToTaskListTwice_presentsTaskListViewControllerTwicr() {
+        let navigationController = UINavigationController()
+        let factory = ViewControllerFactoryStub()
+        let viewController = UIViewController()
+        let secondViewController = UIViewController()
+
+        factory.stub(taskList: ["Task 1"], with: viewController)
+        factory.stub(taskList: ["Task 2"], with: secondViewController)
+
+        let sut = NavigationControllerRouter(navigationController, factory: factory)
+
+        sut.routeTo(taskList: ["Task 1"])
+        sut.routeTo(taskList: ["Task 2"])
+
+        XCTAssertEqual(navigationController.viewControllers.count, 2)
+        XCTAssertEqual(navigationController.viewControllers.first, viewController)
+        XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
+    }
+    
+    func test_routeToTask_presentsTaskViewController() {
+        let navigationController = UINavigationController()
+        let factory = ViewControllerFactoryStub()
+        let viewController = UIViewController()
+        factory.stub(task: "Task 1", with: viewController)
+        
+        let sut = NavigationControllerRouter(navigationController, factory: factory)
+        
+        sut.routeTo(task: "Task 1")
+        
+        XCTAssertEqual(navigationController.viewControllers.first, viewController)
+    }
+    
+    func test_routeToTaskTwice_presentsTaskViewControllerTwice() {
+        let navigationController = UINavigationController()
+        let factory = ViewControllerFactoryStub()
+        let viewController = UIViewController()
+        let secondViewController = UIViewController()
+        
+        factory.stub(task: "Task 1", with: viewController)
+        factory.stub(task: "Task 2", with: secondViewController)
+        
+        let sut = NavigationControllerRouter(navigationController, factory: factory)
+        
+        sut.routeTo(task: "Task 1")
+        sut.routeTo(task: "Task 2")
+
+        XCTAssertEqual(navigationController.viewControllers.first, viewController)
+    }
+    
     class ViewControllerFactoryStub: ViewControllerFactory {
         private var stubbedNoTaskMessages = [String: UIViewController]()
         private var stubbedTaskLists = [[String]: UIViewController]()
-        
+        private var stubbedTasks = [String: UIViewController]()
+
         func stub(noTaskMessage: String, with viewController: UIViewController) {
             return stubbedNoTaskMessages[noTaskMessage] = viewController
         }
         
         func stub(taskList: [String], with viewController: UIViewController) {
             return stubbedTaskLists[taskList] = viewController
+        }
+        
+        func stub(task: String, with viewController: UIViewController) {
+            return stubbedTasks[task] = viewController
         }
         
         func noTaskViewController(for noTaskMessage: String) -> UIViewController {
@@ -77,6 +132,10 @@ class NavigationControllerRouterTest: XCTestCase {
             return stubbedTaskLists[taskList]!
         }
         
+        func taskViewController(for task: String) -> UIViewController {
+            return stubbedTasks[task]!
+        }
+                
     }
     
 }
