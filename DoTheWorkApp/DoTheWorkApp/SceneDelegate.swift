@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import DoTheWork
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

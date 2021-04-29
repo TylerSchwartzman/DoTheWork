@@ -17,6 +17,8 @@
 		322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB82623CA130026FB92 /* TaskListViewController.swift */; };
 		3256993B262A2F38002B26E3 /* DoTheWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3256993A262A2F38002B26E3 /* DoTheWork.framework */; };
 		3256993C262A2F38002B26E3 /* DoTheWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3256993A262A2F38002B26E3 /* DoTheWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32569941262A30A3002B26E3 /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */; };
+		32569944262A3236002B26E3 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32569943262A3236002B26E3 /* NavigationControllerRouter.swift */; };
 		32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBD26224A1F001DA780 /* AppDelegate.swift */; };
 		32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBF26224A1F001DA780 /* SceneDelegate.swift */; };
 		32797FC726224A23001DA780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC626224A23001DA780 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTest.swift; sourceTree = "<group>"; };
 		322E0EB82623CA130026FB92 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		3256993A262A2F38002B26E3 /* DoTheWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DoTheWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
+		32569943262A3236002B26E3 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		32797FBA26224A1F001DA780 /* DoTheWorkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoTheWorkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32797FBD26224A1F001DA780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32797FBF26224A1F001DA780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			children = (
 				32797FBD26224A1F001DA780 /* AppDelegate.swift */,
 				32797FBF26224A1F001DA780 /* SceneDelegate.swift */,
+				32569943262A3236002B26E3 /* NavigationControllerRouter.swift */,
 				320850DB26267A6D00CB5F3D /* Extensions */,
 				320850E026267AC500CB5F3D /* Custom Views */,
 				320850D42626786A00CB5F3D /* View Controllers */,
@@ -161,6 +166,7 @@
 				32797FD626224A23001DA780 /* Info.plist */,
 				322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */,
 				320850C6262617CE00CB5F3D /* NoTasksViewControllerTest.swift */,
+				32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */,
 			);
 			path = DoTheWorkAppTests;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,
 				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
+				32569944262A3236002B26E3 /* NavigationControllerRouter.swift in Sources */,
 				320850E626267C8E00CB5F3D /* CardView.swift in Sources */,
 				320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */,
 			);
@@ -283,6 +290,7 @@
 			files = (
 				320850C7262617CE00CB5F3D /* NoTasksViewControllerTest.swift in Sources */,
 				322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */,
+				32569941262A30A3002B26E3 /* NavigationControllerRouterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
