@@ -12,7 +12,6 @@ protocol ViewControllerFactory {
     func noTaskViewController(for noTaskMessage: String) -> UIViewController
     func taskListViewController(for taskList: [String]) -> UIViewController
     func taskViewController(for task: String) -> UIViewController
-
 }
 
 class NavigationControllerRouter: Router {
