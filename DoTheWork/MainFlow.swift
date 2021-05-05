@@ -34,4 +34,8 @@ class MainFlow <Task, NoTaskMessage, R: Router> where R.Task == Task, R.NoTaskMe
         router.routeTo(taskList: taskList)
     }
     
+    func routeToNoTaskMessage(_ message: NoTaskMessage) {
+        router.routeTo(noTasksMessage: message)
+    }
+    
 }

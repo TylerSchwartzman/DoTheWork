@@ -95,6 +95,12 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedTaskList, ["Task 1", "Task 2"])
     }
     
+    func test_routeNoTaskMessage_routesToCorrectNoTaskMessage() {
+        makeSUT(taskList: []).routeToNoTaskMessage("No Tasks")
+        
+        XCTAssertEqual(router.routedNoTasksMessage, "No Tasks")
+    }
+    
     // MARK:- Helpers
     
     func makeSUT(taskList: [String], noTasksMessage: String? = nil) -> MainFlow<String, String, RouterSpy> {
