@@ -5,7 +5,7 @@
 //  Created by Tyler Schwartzman on 5/6/21.
 //
 
-import Foundation
+import UIKit
 
 protocol ViewControllerFactory {
     func noTaskViewController(for noTaskMessage: String) -> UIViewController
