@@ -23,6 +23,7 @@
 		32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32797FBF26224A1F001DA780 /* SceneDelegate.swift */; };
 		32797FC726224A23001DA780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC626224A23001DA780 /* Assets.xcassets */; };
 		32797FCA26224A23001DA780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC826224A23001DA780 /* LaunchScreen.storyboard */; };
+		32EE2D7426438DBD00369AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EE2D7326438DBD00369AC0 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		32797FCB26224A23001DA780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32797FD026224A23001DA780 /* DoTheWorkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoTheWorkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32797FD626224A23001DA780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32EE2D7326438DBD00369AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				32797FBD26224A1F001DA780 /* AppDelegate.swift */,
 				32797FBF26224A1F001DA780 /* SceneDelegate.swift */,
 				32569943262A3236002B26E3 /* NavigationControllerRouter.swift */,
+				32EE2D7326438DBD00369AC0 /* Task.swift */,
 				320850DB26267A6D00CB5F3D /* Extensions */,
 				320850E026267AC500CB5F3D /* Custom Views */,
 				320850D42626786A00CB5F3D /* View Controllers */,
@@ -274,6 +277,7 @@
 			files = (
 				320850CD2626188600CB5F3D /* NoTasksViewController.swift in Sources */,
 				320850D82626788700CB5F3D /* HeaderView.swift in Sources */,
+				32EE2D7426438DBD00369AC0 /* Task.swift in Sources */,
 				320850D12626459300CB5F3D /* TaskListItemCell.swift in Sources */,
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,

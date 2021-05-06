@@ -8,22 +8,6 @@
 import UIKit
 import DoTheWork
 
-enum Task<T> {
-    case task(T)
-}
-
-protocol TaskName {
-//    var name: Task { get }
-}
-
-struct ConcreteTask: TaskName {
-    let name: TaskName
-    let description: String
-    let notificationTime: Date?
-}
-
-let task = Task.task("Task 1")
-
 protocol ViewControllerFactory {
     func noTaskViewController(for noTaskMessage: String) -> UIViewController
     func taskListViewController(for taskList: [String]) -> UIViewController
