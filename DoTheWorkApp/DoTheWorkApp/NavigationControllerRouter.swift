@@ -8,12 +8,6 @@
 import UIKit
 import DoTheWork
 
-protocol ViewControllerFactory {
-    func noTaskViewController(for noTaskMessage: String) -> UIViewController
-    func taskListViewController(for taskList: [Task]) -> UIViewController
-    func taskViewController(for task: Task) -> UIViewController
-}
-
 class NavigationControllerRouter: Router {
     private let navigationController: UINavigationController
     private let factory: ViewControllerFactory
