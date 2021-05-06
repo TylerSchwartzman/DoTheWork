@@ -10,8 +10,8 @@ import DoTheWork
 
 protocol ViewControllerFactory {
     func noTaskViewController(for noTaskMessage: String) -> UIViewController
-    func taskListViewController(for taskList: [String]) -> UIViewController
-    func taskViewController(for task: String) -> UIViewController
+    func taskListViewController(for taskList: [Task]) -> UIViewController
+    func taskViewController(for task: Task) -> UIViewController
 }
 
 class NavigationControllerRouter: Router {
@@ -23,7 +23,7 @@ class NavigationControllerRouter: Router {
         self.factory = factory
     }
     
-    func routeTo(taskList: [String]) {
+    func routeTo(taskList: [Task]) {
         show(factory.taskListViewController(for: taskList))
     }
     
@@ -31,7 +31,7 @@ class NavigationControllerRouter: Router {
         show(factory.noTaskViewController(for: noTasksMessage))
     }
     
-    func routeTo(task: String) {
+    func routeTo(task: Task) {
         show(factory.taskViewController(for: task))
     }
     

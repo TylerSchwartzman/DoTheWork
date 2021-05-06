@@ -12,6 +12,9 @@ import DoTheWork
 
 class NavigationControllerRouterTest: XCTestCase {
     
+    let task1 = Task(name: "Task 1", description: Description<Any>.text(""), notification: Date())
+    let task2 = Task(name: "Task 2", description: Description<Any>.text(""), notification: Date())
+    
     let navigationController = NonAnimatedNavigationController()
     let factory = ViewControllerFactoryStub()
     let viewController = UIViewController()
@@ -43,19 +46,19 @@ class NavigationControllerRouterTest: XCTestCase {
     }
     
     func test_routeToTaskList_presentsTaskListViewController() {
-        factory.stub(taskList: ["Task 1"], with: viewController)
+        factory.stub(taskList: [task1], with: viewController)
                 
-        sut.routeTo(taskList: ["Task 1"])
+        sut.routeTo(taskList: [task1])
         
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
     }
     
     func test_routeToTaskListTwice_presentsTaskListViewControllerTwicr() {
-        factory.stub(taskList: ["Task 1"], with: viewController)
-        factory.stub(taskList: ["Task 2"], with: secondViewController)
+        factory.stub(taskList: [task1], with: viewController)
+        factory.stub(taskList: [task2], with: secondViewController)
 
-        sut.routeTo(taskList: ["Task 1"])
-        sut.routeTo(taskList: ["Task 2"])
+        sut.routeTo(taskList: [task1])
+        sut.routeTo(taskList: [task2])
 
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
@@ -63,23 +66,24 @@ class NavigationControllerRouterTest: XCTestCase {
     }
     
     func test_routeToTask_presentsTaskViewController() {
-        factory.stub(task: "Task 1", with: viewController)
+        factory.stub(task: task1, with: viewController)
                 
-        sut.routeTo(task: "Task 1")
+        sut.routeTo(task: task1)
         
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
     }
     
     func test_routeToTaskTwice_presentsTaskViewControllerTwice() {
-        factory.stub(task: "Task 1", with: viewController)
-        factory.stub(task: "Task 2", with: secondViewController)
+        factory.stub(task: task1, with: viewController)
+        factory.stub(task: task2, with: secondViewController)
                 
-        sut.routeTo(task: "Task 1")
-        sut.routeTo(task: "Task 2")
+        sut.routeTo(task: task1)
+        sut.routeTo(task: task2)
 
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
         XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
     }
+    
     
     class NonAnimatedNavigationController: UINavigationController {
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -87,21 +91,20 @@ class NavigationControllerRouterTest: XCTestCase {
         }
     }
     
-    
     class ViewControllerFactoryStub: ViewControllerFactory {
         private var stubbedNoTaskMessages = [String: UIViewController]()
-        private var stubbedTaskLists = [[String]: UIViewController]()
-        private var stubbedTasks = [String: UIViewController]()
+        private var stubbedTaskLists = [[Task]: UIViewController]()
+        private var stubbedTasks = [Task: UIViewController]()
 
         func stub(noTaskMessage: String, with viewController: UIViewController) {
             return stubbedNoTaskMessages[noTaskMessage] = viewController
         }
         
-        func stub(taskList: [String], with viewController: UIViewController) {
+        func stub(taskList: [Task], with viewController: UIViewController) {
             return stubbedTaskLists[taskList] = viewController
         }
         
-        func stub(task: String, with viewController: UIViewController) {
+        func stub(task: Task, with viewController: UIViewController) {
             return stubbedTasks[task] = viewController
         }
         
@@ -109,14 +112,23 @@ class NavigationControllerRouterTest: XCTestCase {
             return stubbedNoTaskMessages[noTaskMessage]!
         }
         
-        func taskListViewController(for taskList: [String]) -> UIViewController {
+        func taskListViewController(for taskList: [Task]) -> UIViewController {
             return stubbedTaskLists[taskList]!
         }
         
-        func taskViewController(for task: String) -> UIViewController {
+        func taskViewController(for task: Task) -> UIViewController {
             return stubbedTasks[task]!
         }
                 
     }
     
+}
+
+// For test purposes
+extension Task: Hashable {
+    public func hash(into hasher: inout Hasher) {}
+    
+    public static func == (lhs: Task, rhs: Task) -> Bool {
+        lhs.name == rhs.name
+    }
 }
