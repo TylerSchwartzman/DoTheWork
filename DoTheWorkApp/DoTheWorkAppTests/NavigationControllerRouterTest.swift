@@ -12,8 +12,8 @@ import DoTheWork
 
 class NavigationControllerRouterTest: XCTestCase {
     
-    let task1 = Task(name: "Task 1", description: Description<Any>.text(""), notification: Date())
-    let task2 = Task(name: "Task 2", description: Description<Any>.text(""), notification: Date())
+    let task1 = Task(name: "Task 1", description: Description.text(""), notification: Date())
+    let task2 = Task(name: "Task 2", description: Description.text(""), notification: Date())
     
     let navigationController = NonAnimatedNavigationController()
     let factory = ViewControllerFactoryStub()

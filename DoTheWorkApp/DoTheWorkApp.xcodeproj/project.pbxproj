@@ -24,6 +24,8 @@
 		32797FC726224A23001DA780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC626224A23001DA780 /* Assets.xcassets */; };
 		32797FCA26224A23001DA780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32797FC826224A23001DA780 /* LaunchScreen.storyboard */; };
 		32AB7E662644936200F95E30 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E652644936200F95E30 /* ViewControllerFactory.swift */; };
+		32AB7E692644941C00F95E30 /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */; };
+		32AB7E6C2644979000F95E30 /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */; };
 		32EE2D7426438DBD00369AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EE2D7326438DBD00369AC0 /* Task.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		32797FD026224A23001DA780 /* DoTheWorkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoTheWorkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32797FD626224A23001DA780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32AB7E652644936200F95E30 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
+		32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
 		32EE2D7326438DBD00369AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +159,7 @@
 				32797FBF26224A1F001DA780 /* SceneDelegate.swift */,
 				32569943262A3236002B26E3 /* NavigationControllerRouter.swift */,
 				32AB7E652644936200F95E30 /* ViewControllerFactory.swift */,
+				32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */,
 				32EE2D7326438DBD00369AC0 /* Task.swift */,
 				320850DB26267A6D00CB5F3D /* Extensions */,
 				320850E026267AC500CB5F3D /* Custom Views */,
@@ -173,6 +178,7 @@
 				322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */,
 				320850C6262617CE00CB5F3D /* NoTasksViewControllerTest.swift */,
 				32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */,
+				32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */,
 			);
 			path = DoTheWorkAppTests;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,
 				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
+				32AB7E6C2644979000F95E30 /* iOSViewControllerFactory.swift in Sources */,
 				32569944262A3236002B26E3 /* NavigationControllerRouter.swift in Sources */,
 				320850E626267C8E00CB5F3D /* CardView.swift in Sources */,
 				320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */,
@@ -299,6 +306,7 @@
 				320850C7262617CE00CB5F3D /* NoTasksViewControllerTest.swift in Sources */,
 				322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */,
 				32569941262A30A3002B26E3 /* NavigationControllerRouterTest.swift in Sources */,
+				32AB7E692644941C00F95E30 /* iOSViewControllerFactoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
