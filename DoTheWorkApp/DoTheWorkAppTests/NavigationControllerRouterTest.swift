@@ -12,7 +12,7 @@ import DoTheWork
 
 class NavigationControllerRouterTest: XCTestCase {
     
-    let navigationController = UINavigationController()
+    let navigationController = NonAnimatedNavigationController()
     let factory = ViewControllerFactoryStub()
     let viewController = UIViewController()
     let secondViewController = UIViewController()
@@ -81,6 +81,11 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
     }
     
+    class NonAnimatedNavigationController: UINavigationController {
+        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+            super.pushViewController(viewController, animated: false)
+        }
+    }
     
     
     class ViewControllerFactoryStub: ViewControllerFactory {

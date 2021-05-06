@@ -24,17 +24,18 @@ class NavigationControllerRouter: Router {
     }
     
     func routeTo(taskList: [String]) {
-        let viewController = factory.taskListViewController(for: taskList)
-        navigationController.pushViewController(viewController, animated: false)
+        show(factory.taskListViewController(for: taskList))
     }
     
     func routeTo(noTasksMessage: String) {
-        let viewController = factory.noTaskViewController(for: noTasksMessage)
-        navigationController.pushViewController(viewController, animated: false)
+        show(factory.noTaskViewController(for: noTasksMessage))
     }
     
     func routeTo(task: String) {
-        let viewController = factory.taskViewController(for: task)
-        navigationController.pushViewController(viewController, animated: false)
+        show(factory.taskViewController(for: task))
+    }
+    
+    private func show(_ viewController: UIViewController) {
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
