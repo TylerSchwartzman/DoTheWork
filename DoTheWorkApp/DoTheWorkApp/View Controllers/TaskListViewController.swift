@@ -13,7 +13,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     let tableView = UITableView(frame: .zero, style: .grouped)
     
     private var listHeader = ""
-    private var taskList = [String]()
+    private(set) var taskList = [String]()
     private var selection: ((String) -> Void)? = nil
     private let reuseIdentifier = "Cell"
     
