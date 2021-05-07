@@ -7,22 +7,17 @@
 
 import UIKit
 
-struct TaskListItem {
-    let title: String
-    let notification: Date
-}
-
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let headerLabel = UILabel.makeLabel(for: .largeTitle)
     let tableView = UITableView(frame: .zero, style: .grouped)
     
     private var listHeader = ""
-    private var taskList = [TaskListItem]()
+    private var taskList = [String]()
     private var selection: ((String) -> Void)? = nil
     private let reuseIdentifier = "Cell"
     
-    convenience init(header: String, taskList: [TaskListItem], selection: @escaping (String) -> Void) {
+    convenience init(header: String, taskList: [String], selection: @escaping (String) -> Void) {
         self.init()
         self.listHeader = header
         self.taskList = taskList
@@ -60,7 +55,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selection?(taskList[indexPath.row].title)
+        selection?(taskList[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -68,10 +63,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: Helpers
-    private func dequeueCell(in tableView: UITableView, for task: TaskListItem) -> UITableViewCell {
+    private func dequeueCell(in tableView: UITableView, for task: String) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! TaskListItemCell
-        cell.titleLabel.text = task.title
-        cell.notificationLabel.text = String(describing: task.notification)
+        cell.titleLabel.text = task
+        cell.notificationLabel.text = String(describing: Date())
         return cell
     }
 }
