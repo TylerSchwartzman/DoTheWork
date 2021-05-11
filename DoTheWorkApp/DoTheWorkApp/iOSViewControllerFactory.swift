@@ -17,7 +17,7 @@ class iOSViewControllerFactory: ViewControllerFactory {
     }
     
     func noTaskViewController(for noTaskMessage: String) -> UIViewController {
-        return UIViewController()
+        return NoTasksViewController(message: noTaskMessage)
     }
     
     func taskListViewController(for taskList: [Task]) -> UIViewController {
