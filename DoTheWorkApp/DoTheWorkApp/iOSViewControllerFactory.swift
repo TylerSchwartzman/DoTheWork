@@ -8,7 +8,7 @@
 import UIKit
 import DoTheWork
 
-struct TaskListItemPresenter {
+struct TaskListItemsPresenter {
     let taskList: [Task]
     
     var list: [TaskListItem] {
@@ -31,7 +31,7 @@ class iOSViewControllerFactory: ViewControllerFactory {
     }
     
     func taskListViewController(for taskList: [Task]) -> UIViewController {
-        let presenter = TaskListItemPresenter(taskList: taskList)
+        let presenter = TaskListItemsPresenter(taskList: taskList)
         return TaskListViewController(header: "", taskList: presenter.list, selection: { _ in })
     }
     
