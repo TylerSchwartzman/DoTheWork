@@ -11,22 +11,23 @@ import XCTest
 
 class iOSViewControllerFactoryTest: XCTestCase {
     
-    let task = Task(name: "Task 1", description: Description.text(""), notification: Date())
+    let taskList = [Task(name: "Task 1", description: Description.text(""), notification: Date())]
     
     func test_taskListViewController_createsController() {
-        let sut = iOSViewControllerFactory(taskList: [task])
+        let sut = iOSViewControllerFactory(taskList: taskList)
         
-        let controller = sut.taskListViewController(for: [task]) as? TaskListViewController
+        let controller = sut.taskListViewController(for: taskList) as? TaskListViewController
         
         XCTAssertNotNil(controller)
     }
     
     func test_taskListViewController_createsControllerWithTaskList() {
-        let sut = iOSViewControllerFactory(taskList: [task])
+        let sut = iOSViewControllerFactory(taskList: taskList)
 
-        let controller = sut.taskListViewController(for: [task]) as! TaskListViewController
+        let controller = sut.taskListViewController(for: taskList) as! TaskListViewController
 
-        XCTAssertEqual(controller.taskList, [task.name])
+        XCTAssertEqual(controller.taskList.count, taskList.count)
+        XCTAssertEqual(controller.taskList.first!.title, "Task 1")
     }
     
     func test_noTasksViewController_createsController() {

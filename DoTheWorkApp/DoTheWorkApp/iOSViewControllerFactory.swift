@@ -8,6 +8,16 @@
 import UIKit
 import DoTheWork
 
+struct TaskListItemPresenter {
+    let taskList: [Task]
+    
+    var list: [TaskListItem] {
+        return taskList.map { task in
+            return TaskListItem(title: task.name, notification: task.notification)
+        }
+    }
+}
+
 class iOSViewControllerFactory: ViewControllerFactory {
     
     private let taskList: [Task]
@@ -21,7 +31,8 @@ class iOSViewControllerFactory: ViewControllerFactory {
     }
     
     func taskListViewController(for taskList: [Task]) -> UIViewController {
-        return TaskListViewController(header: "", taskList: taskList, selection: { _ in })
+        let presenter = TaskListItemPresenter(taskList: taskList)
+        return TaskListViewController(header: "", taskList: presenter.list, selection: { _ in })
     }
     
     func taskViewController(for task: Task) -> UIViewController {
