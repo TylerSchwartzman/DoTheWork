@@ -22,26 +22,25 @@ class iOSViewControllerFactoryTest: XCTestCase {
     }
     
     func test_taskListViewController_createsControllerWithTaskList() {
-        let taskList = [task]
-        let sut = iOSViewControllerFactory(taskList: taskList)
+        let sut = iOSViewControllerFactory(taskList: [task])
 
         let controller = sut.taskListViewController(for: [task]) as! TaskListViewController
 
         XCTAssertEqual(controller.taskList, [task.name])
     }
     
-    func test_noTaskViewController_createsController() {
+    func test_noTasksViewController_createsController() {
         let sut = iOSViewControllerFactory(taskList: [])
         
-        let controller = sut.noTaskViewController(for: "") as? NoTasksViewController
+        let controller = sut.noTasksViewController(for: "") as? NoTasksViewController
         
         XCTAssertNotNil(controller)
     }
     
-    func test_noTaskViewController_createsControllerNoTasksWithMessage() {
+    func test_noTasksViewController_createsControllerNoTasksWithMessage() {
         let sut = iOSViewControllerFactory(taskList: [])
         
-        let controller = sut.noTaskViewController(for: "No Tasks Message") as! NoTasksViewController
+        let controller = sut.noTasksViewController(for: "No Tasks Message") as! NoTasksViewController
         _ = controller.view
         
         XCTAssertEqual(controller.messageLabel.text, "No Tasks Message")

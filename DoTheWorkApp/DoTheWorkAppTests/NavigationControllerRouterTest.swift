@@ -108,7 +108,7 @@ class NavigationControllerRouterTest: XCTestCase {
             return stubbedTasks[task] = viewController
         }
         
-        func noTaskViewController(for noTaskMessage: String) -> UIViewController {
+        func noTasksViewController(for noTaskMessage: String) -> UIViewController {
             return stubbedNoTaskMessages[noTaskMessage]!
         }
         

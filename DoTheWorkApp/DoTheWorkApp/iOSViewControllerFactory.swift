@@ -16,15 +16,12 @@ class iOSViewControllerFactory: ViewControllerFactory {
         self.taskList = taskList
     }
     
-    func noTaskViewController(for noTaskMessage: String) -> UIViewController {
+    func noTasksViewController(for noTaskMessage: String) -> UIViewController {
         return NoTasksViewController(message: noTaskMessage)
     }
     
     func taskListViewController(for taskList: [Task]) -> UIViewController {
-        var taskNames: [String] = []
-        taskList.forEach { task in taskNames.append(task.name) }
-        
-        return TaskListViewController(header: "", taskList: taskNames, selection: { _ in })
+        return TaskListViewController(header: "", taskList: taskList, selection: { _ in })
     }
     
     func taskViewController(for task: Task) -> UIViewController {

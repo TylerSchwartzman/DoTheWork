@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = TaskListViewController(
             header: "Tasks Review",
             taskList: [
-                "Task 1 Task 1 Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1", "Task 2"
+                TaskListItem(title: "Task 1 Task 1 Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1Task 1", notification: Date())
+                , TaskListItem(title: "Task 2", notification: Date())
             ]
         ) { print($0) }
 //        window?.rootViewController = NoTasksViewController(message: "There are no tasks to review.")

@@ -22,7 +22,7 @@ class NavigationControllerRouter: Router {
     }
     
     func routeTo(noTasksMessage: String) {
-        show(factory.noTaskViewController(for: noTasksMessage))
+        show(factory.noTasksViewController(for: noTasksMessage))
     }
     
     func routeTo(task: Task) {

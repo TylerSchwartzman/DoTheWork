@@ -9,7 +9,7 @@ import UIKit
 import DoTheWork
 
 protocol ViewControllerFactory {
-    func noTaskViewController(for noTaskMessage: String) -> UIViewController
+    func noTasksViewController(for noTaskMessage: String) -> UIViewController
     func taskListViewController(for taskList: [Task]) -> UIViewController
     func taskViewController(for task: Task) -> UIViewController
 }
