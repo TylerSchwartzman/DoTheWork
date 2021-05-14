@@ -20,19 +20,15 @@ class TaskListItemsPresenterTest: XCTestCase {
     }
     
     func test_list_withTasks_mapsTaskListItemList() {
-        let taskList = [Task(title: "Task 1", description: Description.text(""), notification: Date())]
-        let taskList2 = [Task(title: "", description: Description.text(""), notification: Date()), Task(title: "", description: Description.text(""), notification: Date())]
+        let taskList = makeTaskList()
         
         let sut = TaskListItemsPresenter(taskList: taskList)
-        let sut2 = TaskListItemsPresenter(taskList: taskList2)
         
         XCTAssertEqual(sut.list.count, taskList.count)
-        XCTAssertEqual(sut2.list.count, taskList2.count)
-        
     }
     
     func test_list_withTasks_mapsCorrectTaskListItemList() {
-        let taskList = [Task(title: "Task 1", description: Description.text(""), notification: Date()), Task(title: "Task 2", description: Description.text(""), notification: Date())]
+        let taskList = makeTaskList()
         
         let sut = TaskListItemsPresenter(taskList: taskList)
         
@@ -40,5 +36,10 @@ class TaskListItemsPresenterTest: XCTestCase {
         XCTAssertEqual(sut.list.last!.title, taskList.last!.title)
     }
     
+    // MARK: Helpers
+    
+    private func makeTaskList() -> [Task] {
+        return [Task(title: "Task 1", description: Description.text(""), notification: Date()), Task(title: "Task 2", description: Description.text(""), notification: Date())]
+    }
     
 }
