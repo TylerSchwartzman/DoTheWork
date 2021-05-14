@@ -15,6 +15,7 @@
 		320850E626267C8E00CB5F3D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320850E526267C8E00CB5F3D /* CardView.swift */; };
 		322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */; };
 		322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E0EB82623CA130026FB92 /* TaskListViewController.swift */; };
+		32402969264C86DF008CAEEA /* TaskListItemsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32402968264C86DF008CAEEA /* TaskListItemsPresenterTest.swift */; };
 		3256993B262A2F38002B26E3 /* DoTheWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3256993A262A2F38002B26E3 /* DoTheWork.framework */; };
 		3256993C262A2F38002B26E3 /* DoTheWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3256993A262A2F38002B26E3 /* DoTheWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		32569941262A30A3002B26E3 /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */; };
@@ -62,6 +63,7 @@
 		320850E526267C8E00CB5F3D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		322E0EB32623C9900026FB92 /* TaskListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTest.swift; sourceTree = "<group>"; };
 		322E0EB82623CA130026FB92 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		32402968264C86DF008CAEEA /* TaskListItemsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemsPresenterTest.swift; sourceTree = "<group>"; };
 		3256993A262A2F38002B26E3 /* DoTheWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DoTheWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		32569943262A3236002B26E3 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				320850C6262617CE00CB5F3D /* NoTasksViewControllerTest.swift */,
 				32569940262A30A3002B26E3 /* NavigationControllerRouterTest.swift */,
 				32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */,
+				32402968264C86DF008CAEEA /* TaskListItemsPresenterTest.swift */,
 			);
 			path = DoTheWorkAppTests;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				322E0EB42623C9900026FB92 /* TaskListViewControllerTest.swift in Sources */,
 				32569941262A30A3002B26E3 /* NavigationControllerRouterTest.swift in Sources */,
 				32AB7E692644941C00F95E30 /* iOSViewControllerFactoryTest.swift in Sources */,
+				32402969264C86DF008CAEEA /* TaskListItemsPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ enum Description<T> {
 }
 
 struct Task {
-    let name: String
+    let title: String
     let description: Description<Any>
     let notification: Date
 }

@@ -6,14 +6,13 @@
 //
 
 import UIKit
-import DoTheWork
 
 struct TaskListItemsPresenter {
     let taskList: [Task]
     
     var list: [TaskListItem] {
         return taskList.map { task in
-            return TaskListItem(title: task.name, notification: task.notification)
+            return TaskListItem(title: task.title, notification: task.notification)
         }
     }
 }
