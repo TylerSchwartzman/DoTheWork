@@ -34,7 +34,7 @@ class TaskListViewControllerTest: XCTestCase {
         let date = Date()
         let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1", notifcation: date)])
         
-        let cell = sut.tableView.cell(at: 0) as? TaskItemCell
+        let cell = sut.tableView.cell(at: 0) as? TaskListItemCell
         
         XCTAssertNotNil(cell)
         assertEqual(cell, "Task 1", date)
@@ -45,8 +45,8 @@ class TaskListViewControllerTest: XCTestCase {
         let sut = makeSUT(taskList: [makeTaskListItem(title: "Task 1", notifcation: date),
                                      makeTaskListItem(title: "Task 2", notifcation: date)])
 
-        let firstCell = sut.tableView.cell(at: 0) as? TaskItemCell
-        let secondCell = sut.tableView.cell(at: 1) as? TaskItemCell
+        let firstCell = sut.tableView.cell(at: 0) as? TaskListItemCell
+        let secondCell = sut.tableView.cell(at: 1) as? TaskListItemCell
 
         XCTAssertNotNil(firstCell)
         XCTAssertNotNil(secondCell)
@@ -80,7 +80,7 @@ class TaskListViewControllerTest: XCTestCase {
         return TaskListItem(title: title, notification: notifcation)
     }
     
-    private func assertEqual(_ cell: TaskItemCell?, _ text: String, _ date: Date) {
+    private func assertEqual(_ cell: TaskListItemCell?, _ text: String, _ date: Date) {
         XCTAssertEqual(cell?.titleLabel.text, text)
         XCTAssertEqual(cell?.notificationLabel.text, String(describing: date))
     }

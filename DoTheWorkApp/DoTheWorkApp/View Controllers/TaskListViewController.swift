@@ -16,7 +16,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let tableView = UITableView(frame: .zero, style: .grouped)
         
-    private(set) var listHeader = ""
+    private var listHeader = ""
     private(set) var taskList = [TaskListItem]()
     private var selection: ((String) -> Void)? = nil
     
@@ -38,7 +38,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(TaskItemCell.nib(), forCellReuseIdentifier: TaskItemCell.identifier)
+        tableView.register(TaskListItemCell.nib(), forCellReuseIdentifier: TaskListItemCell.identifier)
         tableView.register(HeaderView.nib(), forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
         tableView.separatorStyle = .none
     }
@@ -70,7 +70,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: Helpers
     private func dequeueCell(in tableView: UITableView, for task: TaskListItem) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TaskItemCell.identifier) as! TaskItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskListItemCell.identifier) as! TaskListItemCell
         cell.titleLabel.text = task.title
         cell.notificationLabel.text = String(describing: task.notification)
         return cell

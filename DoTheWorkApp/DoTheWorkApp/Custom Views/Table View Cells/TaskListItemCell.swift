@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskItemCell: UITableViewCell {
+class TaskListItemCell: UITableViewCell {
 
     static let identifier: String = String(describing: self)
 
