@@ -14,13 +14,11 @@ struct TaskListItem {
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let headerLabel = UILabel.makeLabel(for: .largeTitle)
     let tableView = UITableView(frame: .zero, style: .grouped)
-    
-    private var listHeader = ""
+        
+    private(set) var listHeader = ""
     private(set) var taskList = [TaskListItem]()
     private var selection: ((String) -> Void)? = nil
-    private let reuseIdentifier = "Cell"
     
     convenience init(header: String, taskList: [TaskListItem], selection: @escaping (String) -> Void) {
         self.init()
@@ -30,6 +28,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .secondarySystemBackground
     }
     
     override func loadView() {
@@ -39,8 +38,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        headerLabel.text = listHeader
-        tableView.register(TaskListItemCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(TaskItemCell.nib(), forCellReuseIdentifier: TaskItemCell.identifier)
+        tableView.register(HeaderView.nib(), forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
         tableView.separatorStyle = .none
     }
     
@@ -64,12 +63,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return HeaderView(with: headerLabel)
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as! HeaderView
+        view.label.text = listHeader
+        return view
     }
     
     // MARK: Helpers
     private func dequeueCell(in tableView: UITableView, for task: TaskListItem) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! TaskListItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskItemCell.identifier) as! TaskItemCell
         cell.titleLabel.text = task.title
         cell.notificationLabel.text = String(describing: task.notification)
         return cell
