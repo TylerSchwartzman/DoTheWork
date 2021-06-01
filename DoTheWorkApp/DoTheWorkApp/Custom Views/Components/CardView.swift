@@ -7,11 +7,14 @@
 
 import UIKit
 
+@IBDesignable
 class CardView: UIView {
     
+    @IBInspectable
     var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
+            
         }
         set {
             layer.cornerRadius = newValue
@@ -19,7 +22,8 @@ class CardView: UIView {
             layer.masksToBounds = false
         }
     }
-    
+        
+    @IBInspectable
     var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
@@ -30,6 +34,7 @@ class CardView: UIView {
         }
     }
     
+    @IBInspectable
     var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
@@ -40,6 +45,7 @@ class CardView: UIView {
         }
     }
     
+    @IBInspectable
     var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
@@ -50,4 +56,5 @@ class CardView: UIView {
             layer.masksToBounds = false
         }
     }
+    
 }
