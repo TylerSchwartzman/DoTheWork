@@ -30,6 +30,8 @@
 		32AB7E662644936200F95E30 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E652644936200F95E30 /* ViewControllerFactory.swift */; };
 		32AB7E692644941C00F95E30 /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */; };
 		32AB7E6C2644979000F95E30 /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */; };
+		32DE49492668612A0043F072 /* DynamicLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DE49482668612A0043F072 /* DynamicLabel.xib */; };
+		32DE494C266861340043F072 /* DynamicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE494B266861340043F072 /* DynamicLabel.swift */; };
 		32EE2D7426438DBD00369AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EE2D7326438DBD00369AC0 /* Task.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		32AB7E652644936200F95E30 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
+		32DE49482668612A0043F072 /* DynamicLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicLabel.xib; sourceTree = "<group>"; };
+		32DE494B266861340043F072 /* DynamicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLabel.swift; sourceTree = "<group>"; };
 		32EE2D7326438DBD00369AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +219,8 @@
 			children = (
 				320850E526267C8E00CB5F3D /* CardView.swift */,
 				320FACA1265EBACB002D57EA /* CardView.xib */,
+				32DE494B266861340043F072 /* DynamicLabel.swift */,
+				32DE49482668612A0043F072 /* DynamicLabel.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			files = (
 				32797FCA26224A23001DA780 /* LaunchScreen.storyboard in Resources */,
 				329FB4FC26656B8100E228B9 /* HeaderView.xib in Resources */,
+				32DE49492668612A0043F072 /* DynamicLabel.xib in Resources */,
 				32797FC726224A23001DA780 /* Assets.xcassets in Resources */,
 				320FACA2265EBACB002D57EA /* CardView.xib in Resources */,
 				320FACA7265EC7A0002D57EA /* TaskListItemCell.xib in Resources */,
@@ -332,6 +339,7 @@
 				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
 				32AB7E6C2644979000F95E30 /* iOSViewControllerFactory.swift in Sources */,
 				32569944262A3236002B26E3 /* NavigationControllerRouter.swift in Sources */,
+				32DE494C266861340043F072 /* DynamicLabel.swift in Sources */,
 				320850E626267C8E00CB5F3D /* CardView.swift in Sources */,
 				320850DD26267A8400CB5F3D /* UILabel+Extensions.swift in Sources */,
 				32AB7E662644936200F95E30 /* ViewControllerFactory.swift in Sources */,
