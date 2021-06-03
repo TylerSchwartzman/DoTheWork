@@ -31,7 +31,7 @@ I'd like to create a new task to add to my task list
 
 **Acceptance Criteria:**
 
-- Given the user has previously made tasks
+- Given the user has opened the app
 - and the user wants to create a new task
 - When the user requests to add a new task
 - Then the app should present an empty task detail screen for the user to input details 
