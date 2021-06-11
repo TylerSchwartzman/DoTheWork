@@ -38,4 +38,4 @@ I'd like to create a new task to add to my task list
 -------------------------------------------------------------
 
 
-Reference: Essential Developer - https://www.youtube.com/watch?v=GuxiFOiGtYk&list=PLyjgjmI1UzlSUlaQD0RvLwwW-LSlJn-F6
+Reference: Essential Developer - https://www.youtube.com/playlist?list=PLyjgjmI1UzlSUlaQD0RvLwwW-LSlJn-F6
