@@ -36,3 +36,6 @@ I'd like to create a new task to add to my task list
 - When the user requests to add a new task
 - Then the app should present an empty task detail screen for the user to input details 
 -------------------------------------------------------------
+
+
+Reference: Essential Developer - https://www.youtube.com/watch?v=GuxiFOiGtYk&list=PLyjgjmI1UzlSUlaQD0RvLwwW-LSlJn-F6
