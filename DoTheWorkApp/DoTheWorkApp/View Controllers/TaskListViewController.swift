@@ -63,9 +63,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as! HeaderView
-        view.label.text = listHeader
-        return view
+        return dequeueHeaderView(in: tableView)
     }
     
     // MARK: Helpers
@@ -74,5 +72,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.titleLabel.text = task.title
         cell.notificationLabel.text = String(describing: task.notification)
         return cell
+    }
+    
+    private func dequeueHeaderView(in tableView: UITableView) -> UIView {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as! HeaderView
+        headerView.label.text = listHeader
+        return headerView
     }
 }
