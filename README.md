@@ -22,17 +22,20 @@ I'd like to see the tasks I have created in a list format
 - Then the app should present the user with a message stating there are no tasks - prompting them to create a new one 
 -------------------------------------------------------------
 
-**Story: User requests to see a specific task in their task list**
+**Story: User requests to create a task in their task list**
 
 **Narrative #1** 
 
 Upon reviewing my task list
-I'd like to see the specific details of a task from my task list
+I'd like to create a new task to add to my task list 
 
 **Acceptance Criteria:**
 
-- Given the user has previously made tasks
-- and the user wants to see details of a specific task
-- When the user requests to see their task's details
-- Then the app should present that specific task with all of the task's details 
+- Given the user has opened the app
+- And the user wants to create a new task
+- When the user requests to add a new task
+- Then the app should present an empty task detail screen for the user to input details 
 -------------------------------------------------------------
+
+
+Reference: Essential Developer - https://www.youtube.com/playlist?list=PLyjgjmI1UzlSUlaQD0RvLwwW-LSlJn-F6
