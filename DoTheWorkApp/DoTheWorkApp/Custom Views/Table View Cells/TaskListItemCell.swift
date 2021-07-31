@@ -15,10 +15,6 @@ class TaskListItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var notificationLabel: UILabel!
     
-    static func nib() -> UINib {
-        return UINib(nibName: String(describing: self), bundle: nil)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
        
