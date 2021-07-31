@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header View" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nle-N2-AEl">
-                    <rect key="frame" x="20" y="44" width="511" height="107"/>
+                    <rect key="frame" x="16" y="52" width="499" height="99"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -22,10 +22,10 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="nle-N2-AEl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Hlv-IP-noo"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nle-N2-AEl" secondAttribute="trailing" id="V7Y-0i-eME"/>
+                <constraint firstItem="nle-N2-AEl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Hlv-IP-noo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nle-N2-AEl" secondAttribute="trailing" constant="16" id="V7Y-0i-eME"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nle-N2-AEl" secondAttribute="bottom" id="dwF-FS-JMn"/>
-                <constraint firstItem="nle-N2-AEl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fPX-4q-6u8"/>
+                <constraint firstItem="nle-N2-AEl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="fPX-4q-6u8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
