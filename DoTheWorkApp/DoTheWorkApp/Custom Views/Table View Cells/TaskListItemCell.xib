@@ -21,7 +21,7 @@
                         <rect key="frame" x="20" y="19" width="336" height="84"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" distribution="equalCentering" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tst-i6-jTK">
-                                <rect key="frame" x="8" y="8" width="336" height="68"/>
+                                <rect key="frame" x="16" y="16" width="304" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lk-7B-zb0">
                                         <rect key="frame" x="0.0" y="0.0" width="87.5" height="20.5"/>
@@ -30,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ0-IL-sPx">
-                                        <rect key="frame" x="0.0" y="50" width="79" height="18"/>
+                                        <rect key="frame" x="0.0" y="34" width="79" height="18"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,10 +42,10 @@
                         <viewLayoutGuide key="safeArea" id="aSS-Lr-zby"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aSS-Lr-zby" firstAttribute="bottom" secondItem="tst-i6-jTK" secondAttribute="bottom" constant="8" id="0kz-wz-cz8"/>
-                            <constraint firstItem="aSS-Lr-zby" firstAttribute="trailing" secondItem="tst-i6-jTK" secondAttribute="trailing" constant="-8" id="1Vb-0p-mhv"/>
-                            <constraint firstItem="tst-i6-jTK" firstAttribute="leading" secondItem="aSS-Lr-zby" secondAttribute="leading" constant="8" id="YXc-Lo-bFX"/>
-                            <constraint firstItem="tst-i6-jTK" firstAttribute="top" secondItem="aSS-Lr-zby" secondAttribute="top" constant="8" id="pxX-H6-09C"/>
+                            <constraint firstItem="aSS-Lr-zby" firstAttribute="bottom" secondItem="tst-i6-jTK" secondAttribute="bottom" constant="16" id="0kz-wz-cz8"/>
+                            <constraint firstItem="aSS-Lr-zby" firstAttribute="trailing" secondItem="tst-i6-jTK" secondAttribute="trailing" constant="16" id="1Vb-0p-mhv"/>
+                            <constraint firstItem="tst-i6-jTK" firstAttribute="leading" secondItem="aSS-Lr-zby" secondAttribute="leading" constant="16" id="YXc-Lo-bFX"/>
+                            <constraint firstItem="tst-i6-jTK" firstAttribute="top" secondItem="aSS-Lr-zby" secondAttribute="top" constant="16" id="pxX-H6-09C"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
