@@ -31,6 +31,7 @@
 		32AB7E692644941C00F95E30 /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */; };
 		32AB7E6C2644979000F95E30 /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */; };
 		32EE2D7426438DBD00369AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EE2D7326438DBD00369AC0 /* Task.swift */; };
+		32FD94BA26B5DE5D0049F730 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD94B926B5DE5D0049F730 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		32AB7E682644941C00F95E30 /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		32AB7E6B2644979000F95E30 /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
 		32EE2D7326438DBD00369AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		32FD94B926B5DE5D0049F730 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				320850DC26267A8400CB5F3D /* UILabel+Extensions.swift */,
+				32FD94B926B5DE5D0049F730 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				32EE2D7426438DBD00369AC0 /* Task.swift in Sources */,
 				32797FBE26224A1F001DA780 /* AppDelegate.swift in Sources */,
 				320FACA6265EC7A0002D57EA /* TaskListItemCell.swift in Sources */,
+				32FD94BA26B5DE5D0049F730 /* UIView+Extensions.swift in Sources */,
 				32797FC026224A1F001DA780 /* SceneDelegate.swift in Sources */,
 				322E0EB92623CA130026FB92 /* TaskListViewController.swift in Sources */,
 				32AB7E6C2644979000F95E30 /* iOSViewControllerFactory.swift in Sources */,
