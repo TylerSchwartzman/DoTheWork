@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    static func makeLabel(for textStyle: UIFont.TextStyle) -> UILabel {
+    static func makeDynamicLabel(for textStyle: UIFont.TextStyle) -> UILabel {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: textStyle)
         label.translatesAutoresizingMaskIntoConstraints = false

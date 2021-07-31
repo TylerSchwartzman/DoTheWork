@@ -9,7 +9,7 @@ import UIKit
 
 class NoTasksViewController: UIViewController {
     
-    let messageLabel = UILabel.makeLabel(for: .headline)
+    let messageLabel = UILabel.makeDynamicLabel(for: .headline)
     private var message = ""
     
     convenience init(message: String) {
