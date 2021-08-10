@@ -19,6 +19,12 @@ class AppTest: XCTestCase {
         XCTAssertEqual(router.routedNoTasksMessage, "No Tasks.")
     }
     
+    func test_startApp_withOneTask_doesNotRenderNoTasksMessage() {
+        startApp(router: router, taskList: ["Task 1"], noTasksMessage: "No Tasks.")
+        
+        XCTAssertNil(router.routedNoTasksMessage)
+    }
+    
     func test_startApp_withOneTask_rendersTask() {
         startApp(router: router, taskList: ["Task 1"], noTasksMessage: "No Tasks.")
         
