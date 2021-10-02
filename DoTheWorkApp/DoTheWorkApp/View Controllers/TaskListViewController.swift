@@ -48,6 +48,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.frame = UIScreen.main.bounds
     }
     
+    // MARK: - Data Source Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
     }
@@ -58,6 +59,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
+    // MARK: - Delegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selection?(taskList[indexPath.row].title)
     }
