@@ -123,3 +123,12 @@ class NavigationControllerRouterTest: XCTestCase {
     }
     
 }
+
+// For test purposes
+extension Task: Hashable {
+    public func hash(into hasher: inout Hasher) {}
+    
+    public static func == (lhs: Task, rhs: Task) -> Bool {
+        lhs.title == rhs.title
+    }
+}
