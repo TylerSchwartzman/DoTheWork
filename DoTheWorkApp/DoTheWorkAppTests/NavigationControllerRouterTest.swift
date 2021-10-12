@@ -53,7 +53,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
     }
     
-    func test_routeToTaskListTwice_presentsTaskListViewControllerTwicr() {
+    func test_routeToTaskListTwice_presentsTaskListViewControllerTwice() {
         factory.stub(taskList: [task1], with: viewController)
         factory.stub(taskList: [task2], with: secondViewController)
 
