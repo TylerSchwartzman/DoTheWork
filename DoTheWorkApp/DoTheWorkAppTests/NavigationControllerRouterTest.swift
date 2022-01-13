@@ -12,8 +12,8 @@ import DoTheWork
 
 class NavigationControllerRouterTest: XCTestCase {
     
-    let task1 = Task(title: "Task 1", description: Description.text(""), notification: Date())
-    let task2 = Task(title: "Task 2", description: Description.text(""), notification: Date())
+    let task1 = Task(title: "Task 1", description: Description.text(""), notificationDate: Date())
+    let task2 = Task(title: "Task 2", description: Description.text(""), notificationDate: Date())
     
     let navigationController = NonAnimatedNavigationController()
     let factory = ViewControllerFactoryStub()
@@ -43,6 +43,22 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
         XCTAssertEqual(navigationController.viewControllers.last, secondViewController)
+    }
+    
+    func test_routeToNoTasksMessage_presentsNoTasksViewControllerWithAddTaskButton() {
+        factory.stub(noTaskMessage: "No Task Message", with: viewController)
+            
+        sut.routeTo(noTasksMessage: "No Task Message")
+        
+        XCTAssertNotNil(navigationController.viewControllers.first?.navigationItem.rightBarButtonItem)
+    }
+    
+    func test_routeToTaskList_presentsTaskListViewControllerWithAddTaskButton() {
+        factory.stub(taskList: [task1], with: viewController)
+                
+        sut.routeTo(taskList: [task1])
+        
+        XCTAssertNotNil(navigationController.viewControllers.first?.navigationItem.rightBarButtonItem)
     }
     
     func test_routeToTaskList_presentsTaskListViewController() {

@@ -11,6 +11,10 @@ import DoTheWork
 class NavigationControllerRouter: Router {
     private let navigationController: UINavigationController
     private let factory: ViewControllerFactory
+    private let addTaskBarButton = UIBarButtonItem(image: UIImage(systemName: "plus.app"),
+                                                   style: .plain,
+                                                   target: nil,
+                                                   action: nil)
     
     init(_ navigationController: UINavigationController, factory: ViewControllerFactory) {
         self.navigationController = navigationController
@@ -18,11 +22,15 @@ class NavigationControllerRouter: Router {
     }
     
     func routeTo(taskList: [Task]) {
-        show(factory.taskListViewController(for: taskList))
+        let controller = factory.taskListViewController(for: taskList)
+        controller.navigationItem.rightBarButtonItem = addTaskBarButton
+        show(controller)
     }
     
     func routeTo(noTasksMessage: String) {
-        show(factory.noTasksViewController(for: noTasksMessage))
+        let controller = factory.noTasksViewController(for: noTasksMessage)
+        controller.navigationItem.rightBarButtonItem = addTaskBarButton
+        show(controller)
     }
     
     func routeTo(task: Task) {

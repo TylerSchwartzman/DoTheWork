@@ -9,7 +9,7 @@ import UIKit
 
 struct TaskListItem {
     var title: String
-    let notification: Date
+    let notificationDate: Date
 }
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -41,6 +41,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(TaskListItemCell.nib(), forCellReuseIdentifier: TaskListItemCell.identifier)
         tableView.register(HeaderView.nib(), forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
         tableView.separatorStyle = .none
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                                  target: self,
+                                                                                  action: nil)
     }
     
     override func viewWillLayoutSubviews() {
@@ -72,7 +75,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     private func dequeueCell(in tableView: UITableView, for task: TaskListItem) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskListItemCell.identifier) as! TaskListItemCell
         cell.titleLabel.text = task.title
-        cell.notificationLabel.text = String(describing: task.notification)
+        cell.notificationLabel.text = String(describing: task.notificationDate)
         return cell
     }
     

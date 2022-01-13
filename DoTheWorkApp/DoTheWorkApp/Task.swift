@@ -15,6 +15,6 @@ enum Description<T> {
 struct Task {
     let title: String
     let description: Description<Any>
-    let notification: Date
+    let notificationDate: Date
 }
  

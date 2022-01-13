@@ -67,6 +67,12 @@ class TaskListViewControllerTest: XCTestCase {
         XCTAssertEqual(receivedTask, "Task 1")
     }
     
+    func test_viewDidLoad_rendersAddTaskButton() {
+        let sut = makeSUT()
+        
+        XCTAssertNotNil(sut.navigationItem.rightBarButtonItem)
+    }
+    
     // MARK:- Helpers
     private func makeSUT(header: String = "",
                          taskList: [TaskListItem] = [],
@@ -77,13 +83,17 @@ class TaskListViewControllerTest: XCTestCase {
     }
     
     private func makeTaskListItem(title: String = "", notifcation: Date = .init()) -> TaskListItem {
-        return TaskListItem(title: title, notification: notifcation)
+        return TaskListItem(title: title, notificationDate: notifcation)
     }
     
     private func assertEqual(for cell: TaskListItemCell?, text: String, date: Date) {
         XCTAssertEqual(cell?.titleLabel.text, text)
         XCTAssertEqual(cell?.notificationLabel.text, String(describing: date))
     }
+    
+}
+
+class AddTaskButton: UIView {
     
 }
 

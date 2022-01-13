@@ -11,7 +11,7 @@ import XCTest
 
 class iOSViewControllerFactoryTest: XCTestCase {
     
-    let taskList = [Task(title: "Task 1", description: Description.text(""), notification: Date())]
+    let taskList = [Task(title: "Task 1", description: Description.text(""), notificationDate: Date())]
     
     func test_taskListViewController_createsController() {
         let sut = iOSViewControllerFactory(taskList: taskList)

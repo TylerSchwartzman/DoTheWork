@@ -12,7 +12,7 @@ struct TaskListItemsPresenter {
     
     var list: [TaskListItem] {
         return taskList.map { task in
-            return TaskListItem(title: task.title, notification: task.notification)
+            return TaskListItem(title: task.title, notificationDate: task.notificationDate)
         }
     }
 }

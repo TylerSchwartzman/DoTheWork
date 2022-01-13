@@ -39,8 +39,8 @@ class TaskListItemsPresenterTest: XCTestCase {
     // MARK: Helpers
     
     private func makeTaskList() -> [Task] {
-        return [Task(title: "Task 1", description: Description.text(""), notification: Date()),
-                Task(title: "Task 2", description: Description.text(""), notification: Date())]
+        return [Task(title: "Task 1", description: Description.text(""), notificationDate: Date()),
+                Task(title: "Task 2", description: Description.text(""), notificationDate: Date())]
     }
     
 }
